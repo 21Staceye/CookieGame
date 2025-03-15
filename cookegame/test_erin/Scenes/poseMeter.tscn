@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccrkr1loubx6f"]
+
+[ext_resource type="Script" uid="uid://k8mpu6iya2ny" path="res://test_erin/scripts/pose_meter.gd" id="1_xx3qn"]
+
+[sub_resource type="Gradient" id="Gradient_xx3qn"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j2v3o"]
+gradient = SubResource("Gradient_xx3qn")
+
+[sub_resource type="Gradient" id="Gradient_eh1ep"]
+colors = PackedColorArray(0, 0, 0, 1, 0.0749436, 0.481361, 0.470168, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aq88g"]
+gradient = SubResource("Gradient_eh1ep")
+
+[sub_resource type="Gradient" id="Gradient_v0l34"]
+colors = PackedColorArray(0, 0.65098, 0, 1, 1, 0.211765, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5w3y"]
+gradient = SubResource("Gradient_v0l34")
+
+[node name="PoseMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xx3qn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.576
+anchor_bottom = 0.054
+offset_right = 0.447937
+offset_bottom = 29.008
+value = 1.0
+texture_under = SubResource("GradientTexture1D_j2v3o")
+texture_over = SubResource("GradientTexture1D_aq88g")
+texture_progress = SubResource("GradientTexture2D_h5w3y")
+tint_under = Color(0.137255, 1, 1, 1)
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.587
+anchor_bottom = 0.199
+offset_right = -0.223999
+offset_bottom = 0.0479889
+editable = false
+scrollable = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

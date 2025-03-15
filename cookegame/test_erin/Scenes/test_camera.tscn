@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c87mjpdecuxlo"]
+
+[ext_resource type="Script" uid="uid://8onmccuf3ks" path="res://test_erin/scripts/player_Test.gd" id="1_gamnc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gamnc"]
+radius = 0.878538
+
+[sub_resource type="PrismMesh" id="PrismMesh_5vk3l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gamnc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gamnc"]
+size = Vector3(2.08647, 0.31543, 2.1731)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5vk3l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264536, 0.994641, 0)
+script = ExtResource("1_gamnc")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.872597, 0.666055, 2.20783)
+
+[node name="collisionChar" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0405061, 0)
+shape = SubResource("SphereShape3D_gamnc")
+
+[node name="meshChar" type="MeshInstance3D" parent="CharacterBody3D/collisionChar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0405061, 0)
+mesh = SubResource("PrismMesh_5vk3l")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0139447, 0.999903, 0, -0.999903, -0.0139447, 1.6068, 2.86927, 0.132841)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0253977, 0)
+physics_material_override = SubResource("PhysicsMaterial_gamnc")
+
+[node name="floorCollision" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_gamnc")
+
+[node name="floormesh" type="MeshInstance3D" parent="StaticBody3D/floorCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0255264, 0.140405, 0.0768957)
+mesh = SubResource("PlaneMesh_5vk3l")
