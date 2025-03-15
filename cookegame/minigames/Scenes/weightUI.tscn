@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0mp4of1gxtyg"]
+
+[ext_resource type="Script" uid="uid://bd82pohhkwl15" path="res://minigames/Scenes/push_icon.gd" id="1_148v5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_148v5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_148v5"]
+
+[node name="WeightUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1023.0
+offset_bottom = -222.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="meterBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 102.0
+offset_bottom = 399.0
+color = Color(0.623782, 0.421571, 0.282699, 1)
+
+[node name="meterEmpty" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 40.0
+offset_right = 83.0
+offset_bottom = 381.0
+color = Color(0.895112, 0.824299, 0.724384, 1)
+
+[node name="pushIcon" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 316.0
+offset_right = 76.0
+offset_bottom = 376.0
+color = Color(0.61713, 0.554575, 0.843361, 1)
+script = ExtResource("1_148v5")
+
+[node name="goalIcon" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 88.0
+offset_right = 74.0
+offset_bottom = 112.0
+color = Color(0.829832, 0.662403, 0.259388, 1)
+
+[node name="pusher" type="MeshInstance2D" parent="."]
+position = Vector2(62, 343)
+scale = Vector2(30, 65)
+mesh = SubResource("BoxMesh_148v5")
+
+[node name="goal" type="MeshInstance2D" parent="."]
+position = Vector2(62, 178)
+scale = Vector2(25, 25)
+mesh = SubResource("BoxMesh_148v5")
+texture = SubResource("CanvasTexture_148v5")

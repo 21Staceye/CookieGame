@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://btpf6b1mcie8v"]
+
+[ext_resource type="Script" uid="uid://cqy3r607mgfus" path="res://minigames/Scripts/weightGameScript.gd" id="1_nc8ge"]
+[ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
+[ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/Scenes/weightUI.tscn" id="3_x4tpg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y2sa1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc8ge"]
+albedo_color = Color(0.844349, 0.617202, 0.323976, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nc8ge"]
+material = SubResource("StandardMaterial3D_nc8ge")
+
+[node name="WeightGame" type="Node3D"]
+script = ExtResource("1_nc8ge")
+
+[node name="weightPlayer" type="CharacterBody3D" parent="."]
+script = ExtResource("2_y2sa1")
+
+[node name="playCol" type="CollisionShape3D" parent="weightPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.615, 0, 0, 0)
+shape = SubResource("SphereShape3D_y2sa1")
+
+[node name="tempMesh" type="MeshInstance3D" parent="weightPlayer/playCol"]
+mesh = SubResource("SphereMesh_nc8ge")
+
+[node name="WeightUI" parent="." instance=ExtResource("3_x4tpg")]
