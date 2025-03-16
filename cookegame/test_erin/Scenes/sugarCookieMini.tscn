@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgweijhh32kgv"]
+
+[ext_resource type="PackedScene" uid="uid://ccrkr1loubx6f" path="res://test_erin/Scenes/poseMeter.tscn" id="1_q2jvn"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_q2jvn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q2jvn"]
+
+[node name="SugarCookieMini" type="Node3D"]
+
+[node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]
+offset_left = 1.0
+offset_top = 1.0
+
+[node name="Timer" parent="PoseMeter" index="1"]
+wait_time = 3.0
+
+[node name="player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53813, 0)
+mesh = SubResource("PrismMesh_q2jvn")
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.362575, 2.03924)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_q2jvn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0426604, 0.99909, 0, -0.99909, 0.0426604, 0, 1.09767, 0)
+
+[editable path="PoseMeter"]

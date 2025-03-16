@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwg5jw4jjm8mk"]
+
+[sub_resource type="Gradient" id="Gradient_1ft3f"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.198476, 0.724847, 0.658915, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4qq86"]
+gradient = SubResource("Gradient_1ft3f")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.009
+offset_right = 2.15186
+offset_bottom = -1.83203
+texture = SubResource("GradientTexture1D_4qq86")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.301
+anchor_top = 0.215
+anchor_right = 0.635
+anchor_bottom = 0.329
+offset_left = 0.247955
+offset_top = -0.320007
+offset_right = 0.479919
+offset_bottom = -0.192017
+theme_override_font_sizes/font_size = 35
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.186
+anchor_bottom = 0.27
+offset_left = 81.0
+offset_top = 345.0
+offset_right = 93.728
+offset_bottom = 279.04
+theme_override_font_sizes/font_size = 35
+text = "Quit"
