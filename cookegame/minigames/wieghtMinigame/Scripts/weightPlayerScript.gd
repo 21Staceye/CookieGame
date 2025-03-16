@@ -13,7 +13,7 @@ var score = 50
 func capture_mouse():	#Use this whenever to grab the mouse - used on ready
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-func release_mouse():	#Use whenever to let the player have their mouse back
+func release_mouse():	#Use whenever to let the pl0ayer have their mouse back
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func _ready():

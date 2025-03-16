@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0mp4of1gxtyg"]
 
-[ext_resource type="Script" uid="uid://dvb3jjm51ikjr" path="res://minigames/Scripts/wieghUIScript.gd" id="1_jolnj"]
-[ext_resource type="Texture2D" uid="uid://bi0heumv2ek60" path="res://minigames/Assets/tempCookie.png" id="1_wnfas"]
-[ext_resource type="Texture2D" uid="uid://cuxe64sk26jab" path="res://minigames/Assets/tempMarshmallow.png" id="2_jolnj"]
+[ext_resource type="Script" uid="uid://dvb3jjm51ikjr" path="res://minigames/wieghtMinigame/Scripts/wieghUIScript.gd" id="1_jolnj"]
+[ext_resource type="Texture2D" uid="uid://bi0heumv2ek60" path="res://minigames/wieghtMinigame/Assets/tempCookie.png" id="1_wnfas"]
+[ext_resource type="Texture2D" uid="uid://cuxe64sk26jab" path="res://minigames/wieghtMinigame/Assets/tempMarshmallow.png" id="2_jolnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jolnj"]
 size = Vector2(46, 3)

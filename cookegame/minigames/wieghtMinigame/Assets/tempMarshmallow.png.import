@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuxe64sk26jab"
-path="res://.godot/imported/tempMarshmallow.png-eca171c1a9f9b2f9038a1dbe742d50ab.ctex"
+path="res://.godot/imported/tempMarshmallow.png-b12dd499791f2062891f2665b3fe6bc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigames/Assets/tempMarshmallow.png"
-dest_files=["res://.godot/imported/tempMarshmallow.png-eca171c1a9f9b2f9038a1dbe742d50ab.ctex"]
+source_file="res://minigames/wieghtMinigame/Assets/tempMarshmallow.png"
+dest_files=["res://.godot/imported/tempMarshmallow.png-b12dd499791f2062891f2665b3fe6bc6.ctex"]
 
 [params]
 

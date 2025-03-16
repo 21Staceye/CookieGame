@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://btpf6b1mcie8v"]
 
-[ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/Assets/tempGym.PNG" id="2_x4tpg"]
-[ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
-[ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/Scenes/weightUI.tscn" id="3_x4tpg"]
+[ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
+[ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
+[ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y2sa1"]
 
