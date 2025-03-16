@@ -1,13 +1,10 @@
 extends Control
 var timerOut = false
 var value = 0
-var reached = false
 var stop = false
 var failed = false
 var valueSize = 0.5
 var max = 1.2
-var maxRe = true
-var minRe = false
 var poseNum = 0
 var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
@@ -20,21 +17,20 @@ func _process(delta):
 		valueSize = 0.5
 	if goal == "TipToesPos":
 		valueSize = 0.2
-	if Input.is_action_just_pressed(goal):
+	if Input.is_action_just_pressed(goal) and poseNum < 3:
 			stop = true
 			poseNum+=1
 			stop = false
 			value = 0
 			$PoseMeterr.value = 0
 			goal = arraySteps.pick_random()
+			$/root/SugarCookieMini/player.mesh.size.x = valueSize
 	if poseNum >= 3:
 		print("won")
 		stop = true
-			
-			
 	# pose metter 
 	if timerOut == false or stop == false:
-		if reached == false and stop == false:
+		if stop == false:
 			# pose metter 
 			$PoseMeterr.value = value
 			value+=0.1
@@ -50,11 +46,3 @@ func _on_timer_timeout():
 	stop = true
 	failed = true
 	print("failed")
-
-
-func _on_button_pressed():
-	#stops the metter
-	print("stop")
-	$Timer.paused = true
-	stop = true
-	value = value
