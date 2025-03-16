@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://btpf6b1mcie8v"]
 
-[ext_resource type="Script" uid="uid://cqy3r607mgfus" path="res://minigames/Scripts/weightGameScript.gd" id="1_nc8ge"]
+[ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/Scenes/weightUI.tscn" id="3_x4tpg"]
 
@@ -13,9 +13,9 @@ albedo_color = Color(0.844349, 0.617202, 0.323976, 1)
 material = SubResource("StandardMaterial3D_nc8ge")
 
 [node name="WeightGame" type="Node3D"]
-script = ExtResource("1_nc8ge")
 
 [node name="weightPlayer" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38357, 0, 0)
 script = ExtResource("2_y2sa1")
 
 [node name="playCol" type="CollisionShape3D" parent="weightPlayer"]
@@ -25,4 +25,14 @@ shape = SubResource("SphereShape3D_y2sa1")
 [node name="tempMesh" type="MeshInstance3D" parent="weightPlayer/playCol"]
 mesh = SubResource("SphereMesh_nc8ge")
 
+[node name="tempBack" type="Sprite3D" parent="."]
+transform = Transform3D(1.16759, 0, 0, 0, 1.16759, 0, 0, 0, 1, 0, 0.859422, -2.05726)
+texture = ExtResource("2_x4tpg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932857, 2.03389)
+
 [node name="WeightUI" parent="." instance=ExtResource("3_x4tpg")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62344, 1.98376)
