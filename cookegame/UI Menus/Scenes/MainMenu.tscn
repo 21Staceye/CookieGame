@@ -1,11 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwg5jw4jjm8mk"]
 
-[sub_resource type="Gradient" id="Gradient_1ft3f"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.198476, 0.724847, 0.658915, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4qq86"]
-gradient = SubResource("Gradient_1ft3f")
+[ext_resource type="Texture2D" uid="uid://tyrrlv6e6wbe" path="res://UI Menus/AssetsUIMenus/title_screen.jpg" id="1_4qq86"]
+[ext_resource type="Script" uid="uid://c63vjda5mtafv" path="res://UI Menus/Scripts/main_menu.gd" id="1_od3hb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,38 +10,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_od3hb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.999
-anchor_bottom = 1.009
-offset_right = 2.15186
-offset_bottom = -1.83203
-texture = SubResource("GradientTexture1D_4qq86")
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_right = -0.456055
+texture = ExtResource("1_4qq86")
+expand_mode = 1
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.301
-anchor_top = 0.215
-anchor_right = 0.635
-anchor_bottom = 0.329
-offset_left = 0.247955
+anchor_left = 0.266
+anchor_top = 0.34
+anchor_right = 0.657
+anchor_bottom = 0.569
+offset_left = -0.432007
 offset_top = -0.320007
-offset_right = 0.479919
-offset_bottom = -0.192017
+offset_right = 0.135986
+offset_bottom = 0.287994
 theme_override_font_sizes/font_size = 35
-text = "Play"
+text = "
+"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.186
-anchor_bottom = 0.27
-offset_left = 81.0
-offset_top = 345.0
-offset_right = 93.728
-offset_bottom = 279.04
+anchor_left = 0.119
+anchor_top = 0.772
+anchor_right = 0.426
+anchor_bottom = 0.924
+offset_left = -0.0879974
+offset_top = -0.256012
+offset_right = 0.247955
+offset_bottom = 0.247986
 theme_override_font_sizes/font_size = 35
-text = "Quit"
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.564
+anchor_top = 0.728
+anchor_right = 0.872
+anchor_bottom = 0.884
+offset_left = 0.271973
+offset_top = 0.255981
+offset_right = -0.544067
+offset_bottom = 0.167969
+theme_override_font_sizes/font_size = 35
+text = "
+"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]

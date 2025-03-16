@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvlgx5x6ybemp"]
+
+[ext_resource type="Script" uid="uid://dn4en13vsnquq" path="res://UI Menus/Scripts/credits_menu.gd" id="1_ppbma"]
+
+[sub_resource type="Gradient" id="Gradient_pj4ei"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.942537, 0.487665, 0.785583, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ppbma"]
+gradient = SubResource("Gradient_pj4ei")
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ppbma")
+
+[node name="image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.017
+offset_right = 0.151855
+offset_bottom = -0.0160522
+texture = SubResource("GradientTexture2D_ppbma")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36
+anchor_right = 0.569
+anchor_bottom = 0.176
+offset_left = 0.279968
+offset_top = 18.0
+offset_right = -0.488037
+offset_bottom = -0.0480118
+theme_override_font_sizes/font_size = 70
+text = "Credits"
+
+[node name="exit" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.512
+anchor_top = 0.135
+anchor_right = -1.387
+anchor_bottom = 0.729
+offset_left = -0.119995
+offset_top = 0.039999
+offset_right = -0.119995
+offset_bottom = 0.0159988
+theme_override_font_sizes/font_size = 35
+text = "X"
+
+[node name="textBody" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195
+anchor_top = 0.228
+anchor_right = 0.836
+anchor_bottom = 0.733
+offset_left = 0.359985
+offset_top = 0.255997
+offset_right = -0.0720215
+offset_bottom = 0.0159607
+theme_override_font_sizes/font_size = 45
+text = "Hannah Knisley - Programmer
+Haley Magee - Programmer
+Ella Garcia - UI Artist and 3D Artist
+Erin Stacey - Programmer
+Brooklyn Taylor - 2D Artist"
+
+[connection signal="pressed" from="Label/exit" to="." method="_on_exit_pressed"]
