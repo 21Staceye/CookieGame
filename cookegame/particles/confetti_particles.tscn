@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://drik3mgg4eyhl"]
+
+[ext_resource type="Script" uid="uid://cbvhgltkl5j8a" path="res://particles/confetti_particles.gd" id="1_hcmom"]
+
+[sub_resource type="Curve" id="Curve_2obp5"]
+_data = [Vector2(0.0346667, 1), 0.0, 0.0, 0, 0, Vector2(0.813333, 0.487791), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_hcmom"]
+offsets = PackedFloat32Array(0, 0.697548, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="confetti_particles" type="Node2D"]
+script = ExtResource("1_hcmom")
+
+[node name="red" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 450.0
+initial_velocity_max = 475.0
+linear_accel_min = -20.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_2obp5")
+color = Color(0.864332, 0.24039, 0.267909, 1)
+color_ramp = SubResource("Gradient_hcmom")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="green" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 450.0
+initial_velocity_max = 475.0
+linear_accel_min = -20.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_2obp5")
+color = Color(0.308417, 0.57514, 0.293696, 1)
+color_ramp = SubResource("Gradient_hcmom")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="blue" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 450.0
+initial_velocity_max = 475.0
+linear_accel_min = -20.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_2obp5")
+color = Color(0.215964, 0.538487, 0.703938, 1)
+color_ramp = SubResource("Gradient_hcmom")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="yellow" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 300)
+initial_velocity_min = 450.0
+initial_velocity_max = 475.0
+linear_accel_min = -20.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
+scale_amount_curve = SubResource("Curve_2obp5")
+color = Color(0.875321, 0.723971, 0, 1)
+color_ramp = SubResource("Gradient_hcmom")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
