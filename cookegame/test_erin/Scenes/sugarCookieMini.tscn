@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgweijhh32kgv"]
+
+[ext_resource type="PackedScene" uid="uid://ccrkr1loubx6f" path="res://test_erin/Scenes/poseMeter.tscn" id="1_q2jvn"]
+
+[node name="SugarCookieMini" type="Node3D"]
+
+[node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]
+offset_left = 1.0
+offset_top = 1.0
+
+[editable path="PoseMeter"]
