@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccrkr1loubx6f"]
+[gd_scene load_steps=11 format=3 uid="uid://ccrkr1loubx6f"]
 
 [ext_resource type="Script" uid="uid://k8mpu6iya2ny" path="res://test_erin/scripts/pose_meter.gd" id="1_xx3qn"]
 
@@ -15,6 +15,19 @@ colors = PackedColorArray(0.6437, 0.402269, 0.490357, 1, 0.303114, 0.605526, 0.8
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_v0l34"]
 gradient = SubResource("Gradient_aq88g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xx3qn"]
+albedo_color = Color(0.587118, 0.481098, 0.179221, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j2v3o"]
+material = SubResource("StandardMaterial3D_xx3qn")
+
+[sub_resource type="Gradient" id="Gradient_xx3qn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.657741, 0.484914, 0.439116, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2v3o"]
+gradient = SubResource("Gradient_xx3qn")
 
 [sub_resource type="PrismMesh" id="PrismMesh_xx3qn"]
 
@@ -51,6 +64,14 @@ tint_progress = Color(1, 0.631373, 1, 1)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="won" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(603.042, 156.079)
+rotation = 3.14159
+scale = Vector2(352.091, -86.357)
+mesh = SubResource("CylinderMesh_j2v3o")
+texture = SubResource("GradientTexture2D_j2v3o")
 
 [node name="triMov" type="MeshInstance2D" parent="."]
 position = Vector2(571, 158)

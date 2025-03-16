@@ -12,6 +12,9 @@
 offset_left = 1.0
 offset_top = 1.0
 
+[node name="Timer" parent="PoseMeter" index="1"]
+wait_time = 3.0
+
 [node name="player" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53813, 0)
 mesh = SubResource("PrismMesh_q2jvn")

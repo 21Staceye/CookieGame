@@ -9,6 +9,7 @@ var poseNum = 0
 var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
 func _process(delta):
+	
 	$triMov.mesh.size.x = valueSize
 	# for the temp poses 
 	if goal == "BalancePos":
@@ -18,6 +19,8 @@ func _process(delta):
 	if goal == "TipToesPos":
 		valueSize = 0.2
 	if Input.is_action_just_pressed(goal) and poseNum < 3:
+			print("you Won")
+			$won.visible = true
 			stop = true
 			poseNum+=1
 			stop = false
@@ -25,6 +28,8 @@ func _process(delta):
 			$PoseMeterr.value = 0
 			goal = arraySteps.pick_random()
 			$/root/SugarCookieMini/player.mesh.size.x = valueSize
+	else:
+		$won.visible = false
 	if poseNum >= 3:
 		print("won")
 		stop = true
@@ -33,7 +38,7 @@ func _process(delta):
 		if stop == false:
 			# pose metter 
 			$PoseMeterr.value = value
-			value+=0.1
+			value+=0.8
 		if value == 99:
 			stop = true
 		
