@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtdhclsfvtn5"]
+
+[ext_resource type="Texture2D" uid="uid://cvmchwfdnjmoh" path="res://main/transitions/transitionsUI/exPics/dave1.png" id="1_p6xl8"]
+[ext_resource type="Texture2D" uid="uid://m4cs0yedq2td" path="res://main/transitions/transitionsUI/exPics/dave2.png" id="2_jpgbs"]
+[ext_resource type="Texture2D" uid="uid://b4sgsf18ugxuw" path="res://main/transitions/transitionsUI/exPics/dave3.png" id="3_jpgbs"]
+
+[node name="TransitionExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dialogue1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 331.0
+offset_right = 4021.0
+offset_bottom = 3355.0
+scale = Vector2(0.302048, 0.102048)
+texture = ExtResource("1_p6xl8")
+
+[node name="dialogue2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 332.0
+offset_right = 472.0
+offset_bottom = 600.0
+scale = Vector2(2.48, 1.2)
+texture = ExtResource("2_jpgbs")
+
+[node name="dialogue3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 328.0
+offset_right = 4032.0
+offset_bottom = 3352.0
+scale = Vector2(0.32, 0.12)
+texture = ExtResource("3_jpgbs")
