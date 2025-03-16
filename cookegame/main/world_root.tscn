@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4m0bbkbgr5co"]
+
+[ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
+[ext_resource type="Texture2D" uid="uid://c7o7xor52kp6b" path="res://minigames/nnquiz_minigame/assets/IMG_0653.jpg" id="1_co5ns"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy6bm"]
+albedo_texture = ExtResource("1_co5ns")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b63mn"]
+material = SubResource("StandardMaterial3D_hy6bm")
+
+[node name="worldRoot" type="Node3D"]
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("WorldBoundaryShape3D_gagtc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(53.3177, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_b63mn")
+
+[node name="cookie" parent="." instance=ExtResource("1_b63mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57732, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
