@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://djml8s2st73tt"]
+[gd_scene load_steps=8 format=3 uid="uid://djml8s2st73tt"]
 
 [ext_resource type="Script" uid="uid://dauxma2dsh46i" path="res://UI Menus/Scripts/pause_menu.gd" id="1_4wlev"]
+[ext_resource type="Texture2D" uid="uid://de0vvfkmhg8x7" path="res://UI Menus/AssetsUIMenus/Main Menu Unclicked-01.png" id="2_7ruxl"]
+[ext_resource type="Texture2D" uid="uid://q080yveve548" path="res://UI Menus/AssetsUIMenus/Main Menu Clicked-01.png" id="3_bejr6"]
+[ext_resource type="Texture2D" uid="uid://7vveq20m4mib" path="res://UI Menus/AssetsUIMenus/resume unclicked-01.png" id="4_gsyva"]
+[ext_resource type="Texture2D" uid="uid://mdsxop8tfocq" path="res://UI Menus/AssetsUIMenus/resume clicked-01.png" id="5_snibs"]
+[ext_resource type="Texture2D" uid="uid://ds6xtw3875osu" path="res://UI Menus/AssetsUIMenus/unclicked quit-01.png" id="6_gsyva"]
+[ext_resource type="Texture2D" uid="uid://diu2jr7lc2aaq" path="res://UI Menus/AssetsUIMenus/clicked quit-01.png" id="7_snibs"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -11,39 +17,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4wlev")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.266
-anchor_top = 0.5
-anchor_right = 0.76
-anchor_bottom = 0.6
-offset_left = 0.567993
-offset_top = -4.0
-offset_right = 0.479919
-offset_bottom = 0.199982
-
-[node name="Resume" type="Button" parent="VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="."]
 layout_mode = 2
-text = "Resume"
+anchor_left = 0.41
+anchor_top = 0.194
+anchor_right = 0.597
+anchor_bottom = 0.421
+offset_left = -0.320038
+offset_top = 0.287994
+offset_right = 0.255981
+offset_bottom = 0.191986
+texture_normal = ExtResource("4_gsyva")
+texture_pressed = ExtResource("5_snibs")
+texture_hover = ExtResource("4_gsyva")
+texture_disabled = ExtResource("4_gsyva")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="MainMenu" type="Button" parent="VBoxContainer"]
+[node name="MainMenu" type="TextureButton" parent="."]
 layout_mode = 2
-text = "Main Menu"
+anchor_left = 0.414
+anchor_top = 0.431
+anchor_right = 0.602
+anchor_bottom = 0.657
+offset_left = 0.0719604
+offset_top = -0.288025
+offset_right = -0.504089
+offset_bottom = 0.264008
+texture_normal = ExtResource("2_7ruxl")
+texture_pressed = ExtResource("3_bejr6")
+texture_hover = ExtResource("2_7ruxl")
+texture_disabled = ExtResource("2_7ruxl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainMenu2" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_left = 0.414
+anchor_top = 0.694
+anchor_right = 0.602
+anchor_bottom = 0.921
+offset_left = 0.0719604
+offset_top = 0.287994
+offset_right = -0.504089
+offset_bottom = 0.191956
+texture_normal = ExtResource("6_gsyva")
+texture_pressed = ExtResource("7_snibs")
+texture_hover = ExtResource("6_gsyva")
+texture_disabled = ExtResource("6_gsyva")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Pause" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.431
-anchor_top = 0.252
-anchor_right = 0.587
-anchor_bottom = 0.378
-offset_left = -0.512024
-offset_top = -1.29601
-offset_right = -0.223999
-offset_bottom = 0.0559845
+anchor_top = 0.065
+anchor_right = 0.582
+anchor_bottom = 0.193
+offset_left = -6.51199
+offset_top = -0.120003
+offset_right = -0.463989
+offset_bottom = -0.0640182
 theme_override_font_sizes/font_size = 60
 text = "Pause"
 
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MainMenu2" to="." method="_on_main_menu_2_pressed"]

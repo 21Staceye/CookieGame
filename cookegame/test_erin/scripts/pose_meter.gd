@@ -31,7 +31,6 @@ func _process(delta):
 	else:
 		$won.visible = false
 	if poseNum >= 3:
-		print("won")
 		stop = true
 	# pose metter 
 	if timerOut == false or stop == false:
@@ -50,4 +49,3 @@ func _on_timer_timeout():
 	timerOut = true
 	stop = true
 	failed = true
-	print("failed")

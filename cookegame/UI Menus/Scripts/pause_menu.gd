@@ -7,3 +7,7 @@ func _on_resume_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI Menus/Scenes/MainMenu.tscn")
+
+
+func _on_main_menu_2_pressed() -> void:
+	get_tree().quit()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwg5jw4jjm8mk"]
 
-[ext_resource type="Texture2D" uid="uid://tyrrlv6e6wbe" path="res://UI Menus/AssetsUIMenus/title_screen.jpg" id="1_4qq86"]
 [ext_resource type="Script" uid="uid://c63vjda5mtafv" path="res://UI Menus/Scripts/main_menu.gd" id="1_od3hb"]
+[ext_resource type="Texture2D" uid="uid://dwyqobmn0oq5b" path="res://UI Menus/AssetsUIMenus/CookieTitle.png" id="2_od3hb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +18,7 @@ anchors_preset = -1
 anchor_right = 1.003
 anchor_bottom = 1.0
 offset_right = -0.456055
-texture = ExtResource("1_4qq86")
+texture = ExtResource("2_od3hb")
 expand_mode = 1
 
 [node name="PlayButton" type="Button" parent="."]
