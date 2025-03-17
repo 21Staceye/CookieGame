@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=20 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cq4aegf7b0f4r" path="res://main/assets/Lamppost 1.PNG" id="7_qjavb"]
 [ext_resource type="Texture2D" uid="uid://dwcp2f15rnuf" path="res://main/assets/Lamppost2.PNG" id="8_8n6ma"]
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
+[ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
 
@@ -250,6 +251,10 @@ texture = ExtResource("9_podmx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6514, -1.04839, -0.849674)
+texture = ExtResource("10_8tff1")
+
 [node name="ground" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
@@ -261,13 +266,14 @@ shape = SubResource("BoxShape3D_podmx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(265.873, 0, 0, 0, 1, 0, 0, 0, 1, 23.2487, -0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_b63mn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
 
 [node name="TransitionBox" parent="." groups=["sugar"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23839, -2.38419e-07, 0.0806311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23839, -2.38419e-07, 0.23354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionBox"]
 transform = Transform3D(1, 0, 0, 0, -1.34648e-08, -1, 0, 0.308038, -4.37114e-08, 0.72253, 0.466792, 0)
@@ -287,7 +293,7 @@ layout_mode = 1
 script = ExtResource("5_pxtm2")
 
 [node name="sugCam" type="Camera3D" parent="camPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45009, 0.109736, 3.61638)
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 7.45009, 0.894993, 3.61638)
 
 [node name="transCam" type="Camera3D" parent="camPositions"]
 
