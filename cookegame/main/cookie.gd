@@ -1,5 +1,6 @@
 extends RigidBody3D
 var rolling_force = 20
+@export var completes = 0 #increment this each time you finish a minigame
 
 func _ready() -> void:
 	$Camera3D.top_level = true
