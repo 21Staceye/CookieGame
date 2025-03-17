@@ -5,8 +5,9 @@ var questionsList
 var curQuestion
 
 func _ready() -> void:
-	questionsList = [$question01, $question02, $question03, $question04, $question05]
-	curQuestion = questionsList.pop_at(randi_range(0, len(questionsList)-1))
+	questionsList = [$question01, $question02, $question03, $question04, $question05, $question06,
+	$question07, $question08, $question09, $question10]
+	curQuestion = questionsList.pop_at(0)
 	curQuestion.visible = true
 
 func _on_good_button_pressed() -> void:
@@ -15,7 +16,7 @@ func _on_good_button_pressed() -> void:
 		empy() 
 	else:
 		curQuestion.visible = false
-		curQuestion = questionsList.pop_at(randi_range(0, len(questionsList)-1))
+		curQuestion = questionsList.pop_at(0)
 		curQuestion.visible = true
 
 
@@ -27,7 +28,7 @@ func _on_evil_button_pressed() -> void:
 		empy() 
 	else:
 		curQuestion.visible = false
-		curQuestion = questionsList.pop_at(randi_range(0, len(questionsList)-1))
+		curQuestion = questionsList.pop_at(0)
 		curQuestion.visible = true
 	
 func empy():

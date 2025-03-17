@@ -1,258 +1,722 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl4k747ypgqn7"]
+[gd_scene load_steps=13 format=3 uid="uid://bl4k747ypgqn7"]
 
 [ext_resource type="Script" uid="uid://cgohs11vx0gbc" path="res://minigames/nnquiz_minigame/quiz_script.gd" id="1_8dqqd"]
-[ext_resource type="Texture2D" uid="uid://pckxuenu07b4" path="res://minigames/nnquiz_minigame/assets/jotchua.jpeg" id="2_dg0gv"]
-[ext_resource type="Texture2D" uid="uid://c7o7xor52kp6b" path="res://minigames/nnquiz_minigame/assets/IMG_0653.jpg" id="3_cht0u"]
+[ext_resource type="Texture2D" uid="uid://mkomiuy26iik" path="res://minigames/nnquiz_minigame/assets/Question One-01.png" id="3_mdw22"]
+[ext_resource type="Texture2D" uid="uid://yla2ccueiqmb" path="res://minigames/nnquiz_minigame/assets/Question Two-01.png" id="4_cht0u"]
 [ext_resource type="PackedScene" uid="uid://drik3mgg4eyhl" path="res://particles/confetti_particles.tscn" id="4_dg0gv"]
+[ext_resource type="Texture2D" uid="uid://belrsp204q6fh" path="res://minigames/nnquiz_minigame/assets/Question Three-01.png" id="5_cht0u"]
+[ext_resource type="Texture2D" uid="uid://lyyq8echya3t" path="res://minigames/nnquiz_minigame/assets/Question Four-01-01.png" id="6_54uk7"]
+[ext_resource type="Texture2D" uid="uid://4ijyd1cclmmx" path="res://minigames/nnquiz_minigame/assets/Question Five-01.png" id="7_esurx"]
+[ext_resource type="Texture2D" uid="uid://dx773fn66dlly" path="res://minigames/nnquiz_minigame/assets/Question Six-01-01.png" id="8_kstsc"]
+[ext_resource type="Texture2D" uid="uid://bhkvdrc4dj5kq" path="res://minigames/nnquiz_minigame/assets/Question Seven-01.png" id="9_6jyrx"]
+[ext_resource type="Texture2D" uid="uid://cg3hkragrwvt3" path="res://minigames/nnquiz_minigame/assets/Question Eight-01.png" id="10_0iqjr"]
+[ext_resource type="Texture2D" uid="uid://cxnesn3pifgn6" path="res://minigames/nnquiz_minigame/assets/Question Nine-01.png" id="11_wlwkf"]
+[ext_resource type="Texture2D" uid="uid://cek8qyf8j2ex1" path="res://minigames/nnquiz_minigame/assets/Question Ten-01.png" id="12_kstsc"]
 
 [node name="QuizScene" type="CanvasLayer"]
 script = ExtResource("1_8dqqd")
 
 [node name="confetti_particles" parent="." instance=ExtResource("4_dg0gv")]
-position = Vector2(566, 396)
+position = Vector2(326, 202)
+rotation = 1.79324
 
 [node name="question01" type="TextureRect" parent="."]
 visible = false
 anchors_preset = -1
-anchor_left = 0.236979
-anchor_top = 0.561728
-anchor_right = 0.763021
-anchor_bottom = 0.970679
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_dg0gv")
+texture = ExtResource("3_mdw22")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="goodButton" type="TextureButton" parent="question01"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10396
-anchor_top = 0.158491
-anchor_right = 0.353465
-anchor_bottom = 0.919245
-offset_right = 2872.8
-offset_bottom = 3830.4
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="TextureButton" parent="question01"]
+[node name="goodButton" type="Button" parent="question01"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.658416
-anchor_top = 0.154717
-anchor_right = 0.907921
-anchor_bottom = 0.915472
-offset_right = 2872.8
-offset_bottom = 3830.4
+anchor_left = 0.146572
+anchor_top = 0.585502
+anchor_right = 0.702128
+anchor_bottom = 0.697026
+offset_right = 4465.0
+offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
-stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="question01"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ONE"
+[node name="evilButton" type="Button" parent="question01"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156028
+anchor_top = 0.453532
+anchor_right = 0.70922
+anchor_bottom = 0.563197
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question01"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.717472
+anchor_right = 0.702128
+anchor_bottom = 0.827138
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question01"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141844
+anchor_top = 0.849442
+anchor_right = 0.695035
+anchor_bottom = 0.959108
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
 
 [node name="question02" type="TextureRect" parent="."]
 visible = false
 anchors_preset = -1
-anchor_left = 0.236979
-anchor_top = 0.561728
-anchor_right = 0.763021
-anchor_bottom = 0.970679
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_dg0gv")
+texture = ExtResource("4_cht0u")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="goodButton" type="TextureButton" parent="question02"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10396
-anchor_top = 0.158491
-anchor_right = 0.353465
-anchor_bottom = 0.919245
-offset_right = 2872.8
-offset_bottom = 3830.4
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="TextureButton" parent="question02"]
+[node name="goodButton" type="Button" parent="question02"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.658416
-anchor_top = 0.154717
-anchor_right = 0.907921
-anchor_bottom = 0.915472
-offset_right = 2872.8
-offset_bottom = 3830.4
+anchor_left = 0.141844
+anchor_top = 0.849442
+anchor_right = 0.6974
+anchor_bottom = 0.960967
+offset_right = 4465.0
+offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
-stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="question02"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "TWO"
+[node name="evilButton" type="Button" parent="question02"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156028
+anchor_top = 0.453532
+anchor_right = 0.70922
+anchor_bottom = 0.563197
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question02"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.717472
+anchor_right = 0.702128
+anchor_bottom = 0.827138
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question02"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.587361
+anchor_right = 0.702128
+anchor_bottom = 0.697026
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
 
 [node name="question03" type="TextureRect" parent="."]
 visible = false
 anchors_preset = -1
-anchor_left = 0.236979
-anchor_top = 0.561728
-anchor_right = 0.763021
-anchor_bottom = 0.970679
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_dg0gv")
+texture = ExtResource("5_cht0u")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="goodButton" type="TextureButton" parent="question03"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10396
-anchor_top = 0.158491
-anchor_right = 0.353465
-anchor_bottom = 0.919245
-offset_right = 2872.8
-offset_bottom = 3830.4
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="TextureButton" parent="question03"]
+[node name="goodButton" type="Button" parent="question03"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.658416
-anchor_top = 0.154717
-anchor_right = 0.907921
-anchor_bottom = 0.915472
-offset_right = 2872.8
-offset_bottom = 3830.4
+anchor_left = 0.146572
+anchor_top = 0.451673
+anchor_right = 0.702128
+anchor_bottom = 0.563197
+offset_right = 4465.0
+offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
-stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="question03"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "THREE"
+[node name="evilButton" type="Button" parent="question03"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.849442
+anchor_right = 0.702128
+anchor_bottom = 0.959108
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question03"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.717472
+anchor_right = 0.702128
+anchor_bottom = 0.827138
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question03"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.587361
+anchor_right = 0.702128
+anchor_bottom = 0.697026
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
 
 [node name="question04" type="TextureRect" parent="."]
 visible = false
 anchors_preset = -1
-anchor_left = 0.236979
-anchor_top = 0.561728
-anchor_right = 0.763021
-anchor_bottom = 0.970679
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_dg0gv")
+texture = ExtResource("6_54uk7")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="goodButton" type="TextureButton" parent="question04"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10396
-anchor_top = 0.158491
-anchor_right = 0.353465
-anchor_bottom = 0.919245
-offset_right = 2872.8
-offset_bottom = 3830.4
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="TextureButton" parent="question04"]
+[node name="goodButton" type="Button" parent="question04"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.658416
-anchor_top = 0.154717
-anchor_right = 0.907921
-anchor_bottom = 0.915472
-offset_right = 2872.8
-offset_bottom = 3830.4
+anchor_left = 0.146572
+anchor_top = 0.719331
+anchor_right = 0.702128
+anchor_bottom = 0.830855
+offset_right = 4465.0
+offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
-stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="question04"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "FOUR"
+[node name="evilButton" type="Button" parent="question04"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.849442
+anchor_right = 0.702128
+anchor_bottom = 0.959108
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question04"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.451673
+anchor_right = 0.702128
+anchor_bottom = 0.561338
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question04"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.587361
+anchor_right = 0.702128
+anchor_bottom = 0.697026
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
 
 [node name="question05" type="TextureRect" parent="."]
 visible = false
 anchors_preset = -1
-anchor_left = 0.236979
-anchor_top = 0.561728
-anchor_right = 0.763021
-anchor_bottom = 0.970679
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_dg0gv")
+texture = ExtResource("7_esurx")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="goodButton" type="TextureButton" parent="question05"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10396
-anchor_top = 0.158491
-anchor_right = 0.353465
-anchor_bottom = 0.919245
-offset_right = 2872.8
-offset_bottom = 3830.4
-scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="TextureButton" parent="question05"]
+[node name="goodButton" type="Button" parent="question05"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.658416
-anchor_top = 0.154717
-anchor_right = 0.907921
-anchor_bottom = 0.915472
-offset_right = 2872.8
-offset_bottom = 3830.4
+anchor_left = 0.1513
+anchor_top = 0.583643
+anchor_right = 0.706856
+anchor_bottom = 0.695167
+offset_right = 4465.0
+offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_cht0u")
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question05"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.849442
+anchor_right = 0.702128
+anchor_bottom = 0.959108
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question05"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.451673
+anchor_right = 0.702128
+anchor_bottom = 0.561338
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question05"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146572
+anchor_top = 0.715613
+anchor_right = 0.699764
+anchor_bottom = 0.825279
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="question06" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_kstsc")
+expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="question05"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "FIVE"
+[node name="goodButton" type="Button" parent="question06"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146572
+anchor_top = 0.847584
+anchor_right = 0.702128
+anchor_bottom = 0.959108
+offset_right = 4465.0
+offset_bottom = 1140.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question06"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.449814
+anchor_right = 0.702128
+anchor_bottom = 0.55948
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question06"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.583643
+anchor_right = 0.6974
+anchor_bottom = 0.693309
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question06"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1513
+anchor_top = 0.715613
+anchor_right = 0.704492
+anchor_bottom = 0.825279
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="question07" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_6jyrx")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="goodButton" type="Button" parent="question07"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.451673
+anchor_right = 0.704492
+anchor_bottom = 0.563197
+offset_right = 4465.0
+offset_bottom = 1140.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question07"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.153664
+anchor_top = 0.851301
+anchor_right = 0.706856
+anchor_bottom = 0.960967
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question07"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.583643
+anchor_right = 0.702128
+anchor_bottom = 0.693309
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question07"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1513
+anchor_top = 0.719331
+anchor_right = 0.704492
+anchor_bottom = 0.828996
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="question08" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_0iqjr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="goodButton" type="Button" parent="question08"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.715613
+anchor_right = 0.704492
+anchor_bottom = 0.827138
+offset_right = 4465.0
+offset_bottom = 1140.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question08"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.447955
+anchor_right = 0.702128
+anchor_bottom = 0.557621
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question08"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.583643
+anchor_right = 0.6974
+anchor_bottom = 0.693309
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question08"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146572
+anchor_top = 0.847584
+anchor_right = 0.699764
+anchor_bottom = 0.957249
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="question09" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("11_wlwkf")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="goodButton" type="Button" parent="question09"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13948
+anchor_top = 0.579926
+anchor_right = 0.695035
+anchor_bottom = 0.69145
+offset_right = 4465.0
+offset_bottom = 1140.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question09"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.447955
+anchor_right = 0.702128
+anchor_bottom = 0.557621
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question09"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.717472
+anchor_right = 0.6974
+anchor_bottom = 0.827138
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question09"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146572
+anchor_top = 0.847584
+anchor_right = 0.699764
+anchor_bottom = 0.957249
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="question10" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0709877
+anchor_right = 0.377604
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("12_kstsc")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="goodButton" type="Button" parent="question10"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.847584
+anchor_right = 0.699764
+anchor_bottom = 0.959108
+offset_right = 4465.0
+offset_bottom = 1140.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton" type="Button" parent="question10"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.148936
+anchor_top = 0.447955
+anchor_right = 0.702128
+anchor_bottom = 0.557621
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton2" type="Button" parent="question10"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.717472
+anchor_right = 0.6974
+anchor_bottom = 0.827138
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
+
+[node name="evilButton3" type="Button" parent="question10"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144208
+anchor_top = 0.579926
+anchor_right = 0.6974
+anchor_bottom = 0.689591
+offset_right = 4446.0
+offset_bottom = 1121.0
+scale = Vector2(0.05, 0.05)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="question01/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question01/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question01/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question01/evilButton3" to="." method="_on_evil_button_pressed"]
 [connection signal="pressed" from="question02/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question02/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question02/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question02/evilButton3" to="." method="_on_evil_button_pressed"]
 [connection signal="pressed" from="question03/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question03/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question03/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question03/evilButton3" to="." method="_on_evil_button_pressed"]
 [connection signal="pressed" from="question04/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question04/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question04/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question04/evilButton3" to="." method="_on_evil_button_pressed"]
 [connection signal="pressed" from="question05/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question05/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question05/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question05/evilButton3" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question06/goodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="question06/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question06/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question06/evilButton3" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question07/goodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="question07/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question07/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question07/evilButton3" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question08/goodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="question08/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question08/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question08/evilButton3" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question09/goodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="question09/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question09/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question09/evilButton3" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question10/goodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="question10/evilButton" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question10/evilButton2" to="." method="_on_evil_button_pressed"]
+[connection signal="pressed" from="question10/evilButton3" to="." method="_on_evil_button_pressed"]
