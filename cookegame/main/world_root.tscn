@@ -267,7 +267,7 @@ mesh = SubResource("BoxMesh_b63mn")
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
 
 [node name="TransitionBox" parent="." groups=["sugar"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23839, -2.38419e-07, 3.51973)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23839, -2.38419e-07, 0.0806311)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionBox"]
 transform = Transform3D(1, 0, 0, 0, -1.34648e-08, -1, 0, 0.308038, -4.37114e-08, 0.72253, 0.466792, 0)
