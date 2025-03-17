@@ -31,4 +31,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.
 shape = SubResource("CylinderShape3D_hyfxj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.92664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842416, 2.31751)

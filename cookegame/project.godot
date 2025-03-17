@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="cookeGame"
+run/main_scene="uid://b4m0bbkbgr5co"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
