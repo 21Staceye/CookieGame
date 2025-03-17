@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwg5jw4jjm8mk"]
+[gd_scene load_steps=4 format=3 uid="uid://bwg5jw4jjm8mk"]
 
 [ext_resource type="Script" uid="uid://c63vjda5mtafv" path="res://UI Menus/Scripts/main_menu.gd" id="1_od3hb"]
 [ext_resource type="Texture2D" uid="uid://dwyqobmn0oq5b" path="res://UI Menus/AssetsUIMenus/CookieTitle.png" id="2_od3hb"]
+[ext_resource type="AudioStream" uid="uid://b0kajlye535gc" path="res://test_erin/Scenes/button-305770.mp3" id="3_43qd0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,6 +65,10 @@ theme_override_font_sizes/font_size = 35
 text = "
 "
 
+[node name="buttonHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_43qd0")
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="finished" from="buttonHit" to="." method="_on_button_hit_finished"]
