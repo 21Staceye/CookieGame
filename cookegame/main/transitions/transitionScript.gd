@@ -1,6 +1,7 @@
 extends Node3D
 @onready var worldScene = (self.get_parent())
 @onready var player = worldScene.get_node("cookie")
+@export var playerFreeze = Vector3(0,0,0)
 @onready var camMover = worldScene.get_node("camPositions")
 @onready var camMain = camMover.get_node("mainCam")
 
@@ -40,6 +41,7 @@ func _process(delta) -> void:
 		if (player.completes == whichGroup):	#Makes sure we talk to the groups in order
 			UIList[whichGroup].visible = true	#Make corresponding UI visible
 			isTalk = true
+			playerFreeze = player.position
 			doDialogue(delta)
 		
 	if (Input.is_action_just_pressed("Interact") && canTalk == true):
