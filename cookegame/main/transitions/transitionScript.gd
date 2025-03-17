@@ -1,6 +1,8 @@
 extends Node3D
 @onready var worldScene = (self.get_parent())
 @onready var player = worldScene.get_node("cookie")
+@onready var camMover = worldScene.get_node("camPositions")
+@onready var camMain = camMover.get_node("mainCam")
 
 var canTalk = false
 var isTalk = false
@@ -27,7 +29,6 @@ func cookieLeft(body: Node3D) -> void:
 	if body.name == "cookie":
 		canTalk = false
 
-
 func _process(delta) -> void:
 	
 	if (canTalk == true && isTalk == false):
@@ -48,7 +49,6 @@ func _process(delta) -> void:
 		doDialogue(delta)
 		
 	if (Input.is_action_just_pressed("Interact") && canTalk == true):
-		
 		if (dialogueCounter == 0):
 			get_tree().change_scene_to_file(scenesList[whichGroup])
 		dialogues[dialogueCounter].visible = false 
@@ -56,13 +56,8 @@ func _process(delta) -> void:
 		print(dialogueCounter)
 
 func doDialogue(delta):
-	var cam = (player.get_node("Camera3D"))
-	var camPos = (player.get_node("Camera3D")).position
-	t += delta
-	cam.transform = cam.transform.interpolate_with(camList[whichGroup].transform, t)
-	#camPos = camPos.lerp(Vector3(camPos.x, camPos.y + 1.5, camPos.z), delta * 5)
-	#camPos = (Vector3(camPos.x, camPos.y + 1.5, camPos.z))
-	#worldScene.add_child(UIList[0])
+	camMover.transition_camera(player.get_node("Camera3D"), camList[whichGroup], 2)
+#	camMain.position()
 	dialogues = UIList[whichGroup].get_children()
 	dialogueCounter = len(dialogues) - 1
 	#print(dialogues)
