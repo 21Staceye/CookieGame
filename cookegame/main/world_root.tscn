@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=10 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
 [ext_resource type="Texture2D" uid="uid://c7o7xor52kp6b" path="res://minigames/nnquiz_minigame/assets/IMG_0653.jpg" id="1_co5ns"]
 [ext_resource type="PackedScene" uid="uid://bk3j3ylnhjjon" path="res://main/transitions/transitionBox.tscn" id="3_hy6bm"]
 [ext_resource type="PackedScene" uid="uid://cgtdhclsfvtn5" path="res://main/transitions/transitionsUI/transitionExample.tscn" id="4_w6ggk"]
+[ext_resource type="Script" uid="uid://b8yg1cuqm4ysy" path="res://main/transitions/camera_transitition/camera_transition.gd" id="5_pxtm2"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
 
@@ -50,7 +51,14 @@ visible = false
 layout_mode = 1
 
 [node name="camPositions" type="Node3D" parent="."]
+script = ExtResource("5_pxtm2")
 
-[node name="sugCamPos" type="RemoteTransform3D" parent="camPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45009, 0.687508, 2.74113)
-remote_path = NodePath("..")
+[node name="sugCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45009, 0.109736, 3.61638)
+
+[node name="transCam" type="Camera3D" parent="camPositions"]
+
+[node name="transTime" type="Timer" parent="camPositions"]
+one_shot = true
+
+[connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]
