@@ -1,9 +1,9 @@
 extends Node3D
-@onready var worldScene = (self.get_parent())
+@onready var worldScene = self.get_parent()
 @onready var player = worldScene.get_node("cookie")
 @export var playerFreeze = Vector3(0,0,0)
 @onready var camMover = worldScene.get_node("camPositions")
-@onready var camMain = camMover.get_node("mainCam")
+@onready var camMain = camMover.get_node("transCam")
 
 var canTalk = false	#Use to signal when we're by a cookie group
 var isTalk = false	#Use to signal if we've begun interaction

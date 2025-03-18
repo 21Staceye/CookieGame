@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=29 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
+[ext_resource type="Script" uid="uid://du8sxmln0xggj" path="res://main/transitions/transitionScript.gd" id="20_jsya0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
 
@@ -33,6 +34,10 @@ albedo_texture = ExtResource("1_co5ns")
 material = SubResource("StandardMaterial3D_hy6bm")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hy6bm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_attvt"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jsya0"]
 
 [node name="worldRoot" type="Node3D"]
 
@@ -257,7 +262,7 @@ texture = ExtResource("9_podmx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="floorSprite(Temp)" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6514, -1.04839, -0.849674)
 texture = ExtResource("10_8tff1")
 
@@ -278,13 +283,6 @@ mesh = SubResource("BoxMesh_b63mn")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
 
-[node name="TransitionBox" parent="." groups=["sugar"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23839, -2.38419e-07, 5.34753)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionBox"]
-transform = Transform3D(1, 0, 0, 0, -1.34648e-08, -1, 0, 0.308038, -4.37114e-08, 0.72253, 0.466792, 0)
-mesh = SubResource("CylinderMesh_hy6bm")
-
 [node name="transUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -299,11 +297,45 @@ layout_mode = 1
 script = ExtResource("5_pxtm2")
 
 [node name="sugCam" type="Camera3D" parent="camPositions"]
-transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 7.45009, 0.894993, 3.61638)
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 17.7875, 0.894993, 3.61638)
+
+[node name="chocCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 40.3516, 0.894993, 3.61638)
+
+[node name="nnnCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 75.0699, 0.894993, 3.61638)
 
 [node name="transCam" type="Camera3D" parent="camPositions"]
 
 [node name="transTime" type="Timer" parent="camPositions"]
 one_shot = true
+
+[node name="TransitionsHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4864, 0.0831985, -0.00537109)
+script = ExtResource("20_jsya0")
+
+[node name="sugZone" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.235, -0.049, 0)
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/sugZone"]
+transform = Transform3D(1, 0, 0, 0, -1.34648e-08, -1, 0, 0.308038, -4.37114e-08, 0.72253, 0.466792, 0)
+mesh = SubResource("CylinderMesh_hy6bm")
+
+[node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, 0)
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/chocZone"]
+transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_attvt")
+
+[node name="nnnZone" parent="TransitionsHolder" groups=["nnn"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3002, 0, 0)
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/nnnZone"]
+transform = Transform3D(1, 0, 0, 0, -7.43419e-09, -1, 0, 0.170074, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_jsya0")
 
 [connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]

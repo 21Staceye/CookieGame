@@ -7,7 +7,7 @@ func _ready() -> void:
 	$Camera3D.top_level = true
  
 func _physics_process(delta: float) -> void:
-	var talking = self.get_parent().get_node("TransitionBox").isTalk
+	var talking = self.get_parent().get_node("TransitionsHolder").isTalk
 	print(talking)
 	if (talking != true):
 		$Camera3D.position = Vector3(self.position.x, self.position.y+0.842, self.position.z+2.318)
