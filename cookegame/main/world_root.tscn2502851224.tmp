@@ -1,0 +1,342 @@
+[gd_scene load_steps=28 format=3 uid="uid://b4m0bbkbgr5co"]
+
+[ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
+[ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
+[ext_resource type="Texture2D" uid="uid://c7o7xor52kp6b" path="res://minigames/nnquiz_minigame/assets/IMG_0653.jpg" id="1_co5ns"]
+[ext_resource type="Texture2D" uid="uid://cx7seg1wtms4c" path="res://main/assets/Cafe.PNG" id="1_lgaeo"]
+[ext_resource type="PackedScene" uid="uid://bk3j3ylnhjjon" path="res://main/transitions/transitionBox.tscn" id="3_hy6bm"]
+[ext_resource type="Texture2D" uid="uid://73thx76wvloa" path="res://main/assets/Donut.PNG" id="3_qjavb"]
+[ext_resource type="Texture2D" uid="uid://cl77a51vnkfoe" path="res://main/assets/Flowers.PNG" id="4_8n6ma"]
+[ext_resource type="Texture2D" uid="uid://858swxwhmnq8" path="res://main/assets/Home 2.PNG" id="4_pwh4i"]
+[ext_resource type="PackedScene" uid="uid://cgtdhclsfvtn5" path="res://main/transitions/transitionsUI/transitionExample.tscn" id="4_w6ggk"]
+[ext_resource type="Texture2D" uid="uid://cluy65wevybsh" path="res://main/assets/Home 5.PNG" id="5_7uyrc"]
+[ext_resource type="Texture2D" uid="uid://bq2ob6mwoieg8" path="res://main/assets/Vending.PNG" id="5_podmx"]
+[ext_resource type="Script" uid="uid://b8yg1cuqm4ysy" path="res://main/transitions/camera_transitition/camera_transition.gd" id="5_pxtm2"]
+[ext_resource type="Texture2D" uid="uid://da80dg6v1jg5" path="res://main/assets/Home 3.PNG" id="6_7uyrc"]
+[ext_resource type="Texture2D" uid="uid://cdpfstrl50si4" path="res://main/assets/Home 1.PNG" id="6_attvt"]
+[ext_resource type="Texture2D" uid="uid://cq4aegf7b0f4r" path="res://main/assets/Lamppost 1.PNG" id="7_qjavb"]
+[ext_resource type="Texture2D" uid="uid://bjkq2b7ygwwka" path="res://main/assets/CoDonalds.PNG" id="7_qqvfl"]
+[ext_resource type="Texture2D" uid="uid://dwcp2f15rnuf" path="res://main/assets/Lamppost2.PNG" id="8_8n6ma"]
+[ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
+[ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
+[ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
+[ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_podmx"]
+size = Vector3(1, 3.07605, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy6bm"]
+albedo_texture = ExtResource("1_co5ns")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b63mn"]
+material = SubResource("StandardMaterial3D_hy6bm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jsya0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_attvt"]
+
+[node name="worldRoot" type="Node3D"]
+
+[node name="cookie" parent="." instance=ExtResource("1_b63mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575019, 0)
+
+[node name="background sound" type="AudioStreamPlayer3D" parent="cookie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.575019, 0)
+stream = ExtResource("22_qp774")
+autoplay = true
+
+[node name="Backdrop" type="Node3D" parent="."]
+
+[node name="background" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.3632, 2.70937, -82.4904)
+texture = ExtResource("1_a0p4k")
+
+[node name="cafe" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.52818, 2.70937, -0.740616)
+texture = ExtResource("1_lgaeo")
+
+[node name="HouseB" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 22.8902, 2.70937, -0.740616)
+texture = ExtResource("4_pwh4i")
+
+[node name="HouseY" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 57.3803, 2.70937, -0.740616)
+texture = ExtResource("5_7uyrc")
+
+[node name="HouseG" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 83.6073, 2.70937, -0.740616)
+texture = ExtResource("6_attvt")
+
+[node name="Donut" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.06124, 2.70937, -0.786075)
+texture = ExtResource("3_qjavb")
+
+[node name="HouseP" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 38.1838, 2.70937, -0.786075)
+texture = ExtResource("6_7uyrc")
+
+[node name="Donalds" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.1128, 2.70937, -0.786075)
+texture = ExtResource("7_qqvfl")
+
+[node name="HouseR" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 61.5838, 2.70937, -0.965716)
+texture = ExtResource("9_qqvfl")
+
+[node name="Donalds2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 78.1165, 2.70937, -0.965716)
+texture = ExtResource("7_qqvfl")
+
+[node name="flowers" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 11.2686, 2.70937, -0.687972)
+texture = ExtResource("4_8n6ma")
+
+[node name="donut2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 42.2806, 2.70937, -0.687972)
+texture = ExtResource("3_qjavb")
+
+[node name="cafe2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 27.2638, 2.70937, -0.985384)
+texture = ExtResource("1_lgaeo")
+
+[node name="flowers4" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 67.4557, 2.70937, -0.985384)
+texture = ExtResource("4_8n6ma")
+
+[node name="vending" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7.873, 2.70937, -0.336177)
+texture = ExtResource("5_podmx")
+
+[node name="vending3" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 47.3855, 2.70937, -0.316587)
+texture = ExtResource("5_podmx")
+
+[node name="vending2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 32.8923, 2.70937, -0.336177)
+texture = ExtResource("5_podmx")
+
+[node name="vending4" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 72.5998, 2.70937, -0.336177)
+texture = ExtResource("5_podmx")
+
+[node name="lampPink1" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2.734, -0.196)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen1" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple1" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10, 2.734, -0.196)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPink2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 14.9985, 2.74162, -0.197055)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 20, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple2" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 25, 2.734, -0.196)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPink3" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30, 2.734, -0.196)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen3" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 35, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple3" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 39.9999, 2.75567, -0.205039)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPink4" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 45, 2.734, -0.196)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen4" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 50, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple4" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 55, 2.756, -0.205)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPink5" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 60, 2.734, -0.196)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen5" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 65, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple5" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 70, 2.756, -0.205)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPink6" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 75, 2.734, -0.196)
+texture = ExtResource("7_qjavb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen6" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 80, 2.734, -0.399)
+texture = ExtResource("8_8n6ma")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampGreen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampPurple6" type="Sprite3D" parent="Backdrop"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 85, 2.756, -0.205)
+texture = ExtResource("9_podmx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="floorSprite(Temp)" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6514, -1.04839, -0.849674)
+texture = ExtResource("10_8tff1")
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("WorldBoundaryShape3D_gagtc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1162, 1.03802, 0)
+shape = SubResource("BoxShape3D_podmx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(265.873, 0, 0, 0, 1, 0, 0, 0, 1, 23.2487, -0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_b63mn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
+
+[node name="transUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TransitionExample" parent="transUI" instance=ExtResource("4_w6ggk")]
+visible = false
+layout_mode = 1
+
+[node name="camPositions" type="Node3D" parent="."]
+script = ExtResource("5_pxtm2")
+
+[node name="sugCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 20.4497, 0.894993, 3.61638)
+
+[node name="chocCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 40.3516, 0.894993, 3.61638)
+
+[node name="nnnCam" type="Camera3D" parent="camPositions"]
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 75.338, 0.894993, 3.61638)
+
+[node name="transCam" type="Camera3D" parent="camPositions"]
+
+[node name="transTime" type="Timer" parent="camPositions"]
+one_shot = true
+
+[node name="TransitionsHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4864, 0.0831985, -0.00537109)
+
+[node name="sugZone" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685, -0.083, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/sugZone"]
+transform = Transform3D(1, 0, 0, 0, -7.43419e-09, -1, 0, 0.170074, -4.37114e-08, 1.29678, 0.382276, 0)
+mesh = SubResource("CylinderMesh_jsya0")
+skeleton = NodePath("")
+
+[node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/chocZone"]
+transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_attvt")
+
+[node name="nnnZone" parent="TransitionsHolder" groups=["nnn"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/nnnZone"]
+transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_attvt")
+skeleton = NodePath("../../chocZone")
+
+[connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]

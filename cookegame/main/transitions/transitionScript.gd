@@ -27,15 +27,14 @@ func cookieLeft(body: Node3D) -> void:
 func _process(delta) -> void:
 	
 	if (canTalk == true && isTalk == false):	#Need to check both since canTalk will stay true
-		player.angular_velocity.z = 0			#but this should only happen once
-		var group = self.get_groups()
+		var group = self.get_groups()			#but all this should only happen once
 		match group[0]:
 			"sugar":
 				whichGroup = 0
 			"nnn":
-				whichGroup = 1
-			"chocolate":
 				whichGroup = 2
+			"chocolate":
+				whichGroup = 1
 		if (player.completes == whichGroup):	#Makes sure we talk to the groups in order
 			UIList[whichGroup].visible = true	#Make corresponding UI visible
 			isTalk = true
