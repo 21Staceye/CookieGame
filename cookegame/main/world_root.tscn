@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=30 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
 [ext_resource type="Script" uid="uid://du8sxmln0xggj" path="res://main/transitions/transitionScript.gd" id="20_jsya0"]
+[ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
 
@@ -43,6 +44,11 @@ material = SubResource("StandardMaterial3D_hy6bm")
 
 [node name="cookie" parent="." instance=ExtResource("1_b63mn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575019, 0)
+
+[node name="background sound" type="AudioStreamPlayer3D" parent="cookie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.575019, 0)
+stream = ExtResource("22_qp774")
+autoplay = true
 
 [node name="Backdrop" type="Node3D" parent="."]
 
