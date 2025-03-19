@@ -1,14 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0mp4of1gxtyg"]
+[gd_scene load_steps=12 format=3 uid="uid://b0mp4of1gxtyg"]
 
 [ext_resource type="Script" uid="uid://dvb3jjm51ikjr" path="res://minigames/wieghtMinigame/Scripts/wieghUIScript.gd" id="1_jolnj"]
-[ext_resource type="Texture2D" uid="uid://bi0heumv2ek60" path="res://minigames/wieghtMinigame/Assets/tempCookie.png" id="1_wnfas"]
-[ext_resource type="Texture2D" uid="uid://cuxe64sk26jab" path="res://minigames/wieghtMinigame/Assets/tempMarshmallow.png" id="2_jolnj"]
+[ext_resource type="Texture2D" uid="uid://c8vidwb3aqypt" path="res://minigames/wieghtMinigame/Assets/Weight Bar.PNG" id="2_jsau8"]
+[ext_resource type="Texture2D" uid="uid://dxchgbqe00yhk" path="res://minigames/wieghtMinigame/Assets/Marshmallow .PNG" id="3_o30b3"]
+[ext_resource type="Texture2D" uid="uid://cm6jaipdkdqea" path="res://minigames/wieghtMinigame/Assets/Happy.PNG" id="4_o30b3"]
+[ext_resource type="Texture2D" uid="uid://drf1ae3pc070a" path="res://minigames/wieghtMinigame/Assets/Mad.PNG" id="5_hgacw"]
+[ext_resource type="Texture2D" uid="uid://cr8qq11t2u742" path="res://minigames/wieghtMinigame/Assets/Bar.PNG" id="6_hgacw"]
+[ext_resource type="Texture2D" uid="uid://ll665vamwn5f" path="res://minigames/wieghtMinigame/Assets/Jelly.PNG" id="7_65ouq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jolnj"]
 size = Vector2(46, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvcli"]
-size = Vector2(763.077, 741.667)
+size = Vector2(70, 170)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rh4g3"]
 
@@ -30,51 +34,63 @@ script = ExtResource("1_jolnj")
 
 [node name="meterBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 23.0
-offset_right = 102.0
-offset_bottom = 399.0
+offset_left = 18.0
+offset_top = 57.0
+offset_right = 95.0
+offset_bottom = 433.0
 color = Color(0.623782, 0.421571, 0.282699, 1)
 
 [node name="meterArea" type="Area2D" parent="."]
+position = Vector2(-7, 34)
 
 [node name="meterEmpty" type="ColorRect" parent="meterArea"]
+visible = false
 offset_left = 43.0
 offset_top = 40.0
 offset_right = 83.0
 offset_bottom = 381.0
-color = Color(0.903143, 0.759069, 0.550008, 1)
 
 [node name="topBound" type="CollisionShape2D" parent="meterArea"]
 position = Vector2(62, 70)
 shape = SubResource("RectangleShape2D_jolnj")
 
 [node name="lowBound" type="CollisionShape2D" parent="meterArea"]
-position = Vector2(61, 341)
+position = Vector2(61, 417)
 shape = SubResource("RectangleShape2D_jolnj")
 
+[node name="Sprite2D" type="Sprite2D" parent="meterArea"]
+position = Vector2(78, 244)
+scale = Vector2(0.25713, 0.25713)
+texture = ExtResource("2_jsau8")
+
 [node name="pusher" type="Area2D" parent="."]
-position = Vector2(63, 338)
-scale = Vector2(0.039, 0.075)
+position = Vector2(74, 372)
+scale = Vector2(0.515511, 0.515511)
 
 [node name="pusherCollision" type="CollisionShape2D" parent="pusher"]
-position = Vector2(-12.3077, -14.8325)
+position = Vector2(-36, 7)
 shape = SubResource("RectangleShape2D_wvcli")
 
 [node name="pusherSprite" type="Sprite2D" parent="pusher"]
-texture = ExtResource("2_jolnj")
+position = Vector2(0, -392)
+scale = Vector2(0.56237, 0.56237)
+texture = ExtResource("3_o30b3")
 
 [node name="goal" type="Area2D" parent="."]
 material = SubResource("CanvasItemMaterial_rh4g3")
-position = Vector2(64, 352)
+position = Vector2(57, 386)
 scale = Vector2(0.0231998, 0.0231998)
 
 [node name="goalCollision" type="CollisionShape2D" parent="goal"]
 position = Vector2(-21.5522, -21.5518)
 shape = SubResource("RectangleShape2D_wnfas")
 
-[node name="goalSprite" type="Sprite2D" parent="goal"]
-texture = ExtResource("1_wnfas")
+[node name="goalSpriteGud" type="Sprite2D" parent="goal"]
+visible = false
+texture = ExtResource("4_o30b3")
+
+[node name="goalSpriteBad" type="Sprite2D" parent="goal"]
+texture = ExtResource("5_hgacw")
 
 [node name="whenToMove" type="Timer" parent="."]
 wait_time = 2.0
@@ -83,6 +99,17 @@ autostart = true
 [node name="whenToChange" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="progBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 44.0
+offset_right = 1955.0
+offset_bottom = 2092.0
+scale = Vector2(0.188984, 0.223768)
+fill_mode = 3
+texture_under = ExtResource("6_hgacw")
+texture_progress = ExtResource("7_65ouq")
 
 [connection signal="area_entered" from="meterArea" to="." method="inBounds"]
 [connection signal="area_exited" from="meterArea" to="." method="outOfBounds"]

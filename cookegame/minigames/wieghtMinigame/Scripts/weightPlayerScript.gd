@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 @onready var speed = (top.y - low.y) / 4
 @export var isOverlapped = false
-var score = 50
+@export var score = 25
 
 func capture_mouse():	#Use this whenever to grab the mouse - used on ready
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -33,7 +33,7 @@ func _process(delta):
 			
 	match isOverlapped:
 		false:
-			score -= 2 * delta
+			score -= 4 * delta
 		true:
 			score += 4 * delta
 			
