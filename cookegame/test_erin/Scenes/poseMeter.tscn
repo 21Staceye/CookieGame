@@ -78,5 +78,15 @@ position = Vector2(571, 158)
 scale = Vector2(241.75, 142.375)
 mesh = SubResource("PrismMesh_xx3qn")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 0.956
+offset_left = 6.0
+offset_top = 33.0
+offset_right = 5.87
+offset_bottom = 33.008
+
 [connection signal="value_changed" from="PoseMeterr" to="." method="_on_pose_meterr_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
