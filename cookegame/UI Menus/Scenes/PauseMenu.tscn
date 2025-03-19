@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djml8s2st73tt"]
+[gd_scene load_steps=9 format=3 uid="uid://djml8s2st73tt"]
 
 [ext_resource type="Script" uid="uid://dauxma2dsh46i" path="res://UI Menus/Scripts/pause_menu.gd" id="1_4wlev"]
 [ext_resource type="Texture2D" uid="uid://de0vvfkmhg8x7" path="res://UI Menus/AssetsUIMenus/Main Menu Unclicked-01.png" id="2_7ruxl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mdsxop8tfocq" path="res://UI Menus/AssetsUIMenus/resume clicked-01.png" id="5_snibs"]
 [ext_resource type="Texture2D" uid="uid://ds6xtw3875osu" path="res://UI Menus/AssetsUIMenus/unclicked quit-01.png" id="6_gsyva"]
 [ext_resource type="Texture2D" uid="uid://diu2jr7lc2aaq" path="res://UI Menus/AssetsUIMenus/clicked quit-01.png" id="7_snibs"]
+[ext_resource type="AudioStream" uid="uid://b0kajlye535gc" path="res://test_erin/Scenes/button-305770.mp3" id="8_snibs"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -81,6 +82,9 @@ offset_right = -0.463989
 offset_bottom = -0.0640182
 theme_override_font_sizes/font_size = 60
 text = "Pause"
+
+[node name="buttonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_snibs")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
