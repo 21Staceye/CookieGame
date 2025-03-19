@@ -1,7 +1,6 @@
 extends Node3D
-@onready var worldScene = self.get_parent()
+@onready var worldScene = get_tree().root.get_child(0)
 @onready var player = worldScene.get_node("cookie")
-@export var playerFreeze = Vector3(0,0,0)
 @onready var camMover = worldScene.get_node("camPositions")
 @onready var camMain = camMover.get_node("transCam")
 
@@ -16,7 +15,6 @@ var scenesList = ["res://test_erin/Scenes/sugarCookieMini.tscn",
 					"res://minigames/wieghtMinigame/Scenes/weightGame.tscn"]
 var dialogues = []	#Modified later to add dialogue text boxes to an array
 var dialogueCounter = 0	 #Modified later to know how many text boxes there are left
-
 
 func cookieInteract(body: Node3D) -> void:
 	if body.name == "cookie":
@@ -41,7 +39,8 @@ func _process(delta) -> void:
 		if (player.completes == whichGroup):	#Makes sure we talk to the groups in order
 			UIList[whichGroup].visible = true	#Make corresponding UI visible
 			isTalk = true
-			playerFreeze = player.position
+			player.isTalking = true
+			player.freezePos = player.position
 			doDialogue(delta)
 		
 	if (Input.is_action_just_pressed("Interact") && canTalk == true):

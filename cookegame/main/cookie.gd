@@ -2,14 +2,14 @@ extends RigidBody3D
 var rolling_force = 20
 
 @export var completes = 0 #increment this each time you finish a minigame
+@export var isTalking = false
+@export var freezePos = Vector3(0,0,0)
 
 func _ready() -> void:
 	$Camera3D.top_level = true
  
 func _physics_process(delta: float) -> void:
-	var talking = self.get_parent().get_node("TransitionsHolder").isTalk
-	print(talking)
-	if (talking != true):
+	if (isTalking != true):
 		$Camera3D.position = Vector3(self.position.x, self.position.y+0.842, self.position.z+2.318)
 		
 		if Input.is_action_pressed("Forward"):
@@ -21,5 +21,5 @@ func _physics_process(delta: float) -> void:
 			angular_velocity.z = 10
 			
 	else:
-		self.position = self.get_parent().get_node("TransitionBox").playerFreeze
+		self.position = freezePos
 		angular_velocity.z = 0

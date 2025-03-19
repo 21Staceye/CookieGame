@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=29 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
+[ext_resource type="Script" uid="uid://du8sxmln0xggj" path="res://main/transitions/transitionScript.gd" id="20_jsya0"]
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
@@ -300,13 +301,13 @@ layout_mode = 1
 script = ExtResource("5_pxtm2")
 
 [node name="sugCam" type="Camera3D" parent="camPositions"]
-transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 20.4497, 0.894993, 3.61638)
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 17.7875, 0.894993, 3.61638)
 
 [node name="chocCam" type="Camera3D" parent="camPositions"]
 transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 40.3516, 0.894993, 3.61638)
 
 [node name="nnnCam" type="Camera3D" parent="camPositions"]
-transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 75.338, 0.894993, 3.61638)
+transform = Transform3D(1, 0, 0, 0, 0.991857, 0.127359, 0, -0.127359, 0.991857, 75.0699, 0.894993, 3.61638)
 
 [node name="transCam" type="Camera3D" parent="camPositions"]
 
@@ -315,28 +316,34 @@ one_shot = true
 
 [node name="TransitionsHolder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4864, 0.0831985, -0.00537109)
+script = ExtResource("20_jsya0")
 
 [node name="sugZone" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685, -0.083, 0)
+script = null
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/sugZone"]
 transform = Transform3D(1, 0, 0, 0, -7.43419e-09, -1, 0, 0.170074, -4.37114e-08, 1.29678, 0.382276, 0)
 mesh = SubResource("CylinderMesh_jsya0")
-skeleton = NodePath("")
+skeleton = NodePath("../../nnnZone")
 
 [node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, 0)
+script = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/chocZone"]
 transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_attvt")
 
 [node name="nnnZone" parent="TransitionsHolder" groups=["nnn"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3002, 0, 0)
+script = null
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/nnnZone"]
-transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_attvt")
-skeleton = NodePath("../../chocZone")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TransitionsHolder/nnnZone"]
+transform = Transform3D(1, 0, 0, 0, -7.43419e-09, -1, 0, 0.170074, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_jsya0")
+
+[node name="TransitionBox" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86399, 0.179098, -0.221299)
 
 [connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]
