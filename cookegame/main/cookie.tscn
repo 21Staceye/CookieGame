@@ -1,16 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b60wevh7r0fpc"]
+[gd_scene load_steps=5 format=3 uid="uid://b60wevh7r0fpc"]
 
 [ext_resource type="Script" uid="uid://dfkjprq6837t0" path="res://main/cookie.gd" id="1_wx4hi"]
-[ext_resource type="Texture2D" uid="uid://pckxuenu07b4" path="res://minigames/nnquiz_minigame/assets/jotchua.jpeg" id="2_0yr3t"]
+[ext_resource type="PackedScene" uid="uid://b3aymasinrx5t" path="res://cookieAssets/RaisinCookie.glb" id="2_0yr3t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yr3t"]
 friction = 5.0
 rough = true
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_hyfxj"]
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_2v1et"]
-albedo_texture = ExtResource("2_0yr3t")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hyfxj"]
 height = 0.304565
@@ -21,14 +16,12 @@ physics_material_override = SubResource("PhysicsMaterial_0yr3t")
 angular_damp = 2.0
 script = ExtResource("1_wx4hi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -6.21258e-09, -1, 0, 0.142127, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_hyfxj")
-surface_material_override/0 = SubResource("ORMMaterial3D_2v1et")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.5879e-10, 0.00592041)
 shape = SubResource("CylinderShape3D_hyfxj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842416, 2.31751)
+
+[node name="RaisinCookie" parent="." instance=ExtResource("2_0yr3t")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

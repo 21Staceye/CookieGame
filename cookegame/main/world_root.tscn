@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=30 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -20,7 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
+[ext_resource type="PackedScene" uid="uid://cdrh4dxo3l2rp" path="res://cookieAssets/SugarCookie.glb" id="22_60jlr"]
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
+[ext_resource type="PackedScene" uid="uid://bnynwvkojppym" path="res://cookieAssets/SugarCookie2.glb" id="23_s8m22"]
+[ext_resource type="PackedScene" uid="uid://bph734pbgivdw" path="res://cookieAssets/Road2.glb" id="24_s8m22"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
 
@@ -32,8 +35,6 @@ albedo_texture = ExtResource("1_co5ns")
 
 [sub_resource type="BoxMesh" id="BoxMesh_b63mn"]
 material = SubResource("StandardMaterial3D_hy6bm")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_jsya0"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_attvt"]
 
@@ -122,7 +123,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 72.5998, 2.70937, -0.33
 texture = ExtResource("5_podmx")
 
 [node name="lampPink1" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2.734, -0.427444)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink1"]
@@ -138,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple1" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 10, 2.734, -0.427444)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple1"]
@@ -146,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPink2" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 14.9985, 2.74162, -0.197055)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 14.9985, 2.74162, -0.428499)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink2"]
@@ -162,7 +163,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple2" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 25, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 25, 2.734, -0.427444)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple2"]
@@ -170,7 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPink3" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 30, 2.734, -0.427444)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink3"]
@@ -186,7 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple3" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 39.9999, 2.75567, -0.205039)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 39.9999, 2.75567, -0.436483)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple3"]
@@ -194,7 +195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPink4" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 45, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 45, 2.734, -0.427444)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink4"]
@@ -210,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple4" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 55, 2.756, -0.205)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 55, 2.756, -0.436444)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple4"]
@@ -218,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPink5" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 60, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 60, 2.734, -0.427444)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink5"]
@@ -234,7 +235,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple5" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 70, 2.756, -0.205)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 70, 2.756, -0.436444)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple5"]
@@ -242,7 +243,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPink6" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 75, 2.734, -0.196)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 75, 2.734, -0.427444)
 texture = ExtResource("7_qjavb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPink6"]
@@ -258,7 +259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
 light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="lampPurple6" type="Sprite3D" parent="Backdrop"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 85, 2.756, -0.205)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 85, 2.756, -0.436444)
 texture = ExtResource("9_podmx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backdrop/lampPurple6"]
@@ -267,6 +268,7 @@ light_color = Color(0.961893, 0.671439, 0, 1)
 
 [node name="floorSprite(Temp)" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6514, -1.04839, -0.849674)
+visible = false
 texture = ExtResource("10_8tff1")
 
 [node name="ground" type="StaticBody3D" parent="."]
@@ -285,6 +287,8 @@ mesh = SubResource("BoxMesh_b63mn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
+light_color = Color(1, 0.853715, 0.63686, 1)
+light_energy = 1.941
 
 [node name="transUI" type="Control" parent="."]
 layout_mode = 3
@@ -319,10 +323,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4864, 0.0831985, -0.005371
 [node name="sugZone" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685, -0.083, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/sugZone"]
-transform = Transform3D(1, 0, 0, 0, -7.43419e-09, -1, 0, 0.170074, -4.37114e-08, 1.29678, 0.382276, 0)
-mesh = SubResource("CylinderMesh_jsya0")
-skeleton = NodePath("")
+[node name="SugarCookie2" parent="TransitionsHolder/sugZone" instance=ExtResource("23_s8m22")]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 1.5219, 0.454207, -0.316078)
+
+[node name="SugarCookie" parent="TransitionsHolder/sugZone" instance=ExtResource("22_60jlr")]
+transform = Transform3D(0.207484, 0, 0, 0, 0.207484, 0, 0, 0, 0.207484, 0.263157, 0.396686, -0.387521)
 
 [node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, 0)
@@ -338,5 +343,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, 0)
 transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_attvt")
 skeleton = NodePath("../../chocZone")
+
+[node name="Road2" parent="." instance=ExtResource("24_s8m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4561, -0.525749, 0.0433981)
 
 [connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]

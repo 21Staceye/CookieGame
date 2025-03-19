@@ -1,7 +1,7 @@
 extends RigidBody3D
 var rolling_force = 20
 
-@export var completes = 1 #increment this each time you finish a minigame
+@export var completes = 0 #increment this each time you finish a minigame
 @export var isTalking = false
 @export var freezePos = Vector3(0,0,0)
 

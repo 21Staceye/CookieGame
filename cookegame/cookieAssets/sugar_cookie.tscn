@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0sgg888yscq6"]
+
+[ext_resource type="PackedScene" uid="uid://cdrh4dxo3l2rp" path="res://cookieAssets/SugarCookie.glb" id="1_2dghb"]
+
+[node name="SugarCookie" instance=ExtResource("1_2dghb")]
+
+[node name="Skeleton3D" parent="Sugar_Cookie" index="0"]
+bones/0/position = Vector3(-0.356655, 0, 0)
+bones/0/rotation = Quaternion(0.00951247, 0.00651198, 0.055143, 0.998412)
+bones/2/position = Vector3(9.31323e-09, -0.541489, 0.704456)
