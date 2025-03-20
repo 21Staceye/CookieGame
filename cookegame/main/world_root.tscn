@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=31 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
+[ext_resource type="Script" uid="uid://dk3nlalmhjkog" path="res://main/cookieAnims.gd" id="21_646bl"]
 [ext_resource type="PackedScene" uid="uid://cdrh4dxo3l2rp" path="res://cookieAssets/SugarCookie.glb" id="22_60jlr"]
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 [ext_resource type="PackedScene" uid="uid://bnynwvkojppym" path="res://cookieAssets/SugarCookie2.glb" id="23_s8m22"]
@@ -319,6 +320,7 @@ one_shot = true
 
 [node name="TransitionsHolder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4864, 0.0831985, -0.00537109)
+script = ExtResource("21_646bl")
 
 [node name="sugZone" parent="TransitionsHolder" groups=["sugar"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685, -0.083, 0)
