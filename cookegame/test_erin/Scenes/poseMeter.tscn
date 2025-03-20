@@ -1,36 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccrkr1loubx6f"]
+[gd_scene load_steps=18 format=3 uid="uid://ccrkr1loubx6f"]
 
 [ext_resource type="Script" uid="uid://k8mpu6iya2ny" path="res://test_erin/scripts/pose_meter.gd" id="1_xx3qn"]
 [ext_resource type="Texture2D" uid="uid://ck64vwwwmy3w0" path="res://test_erin/assets_minigame/Pose game background .PNG" id="2_eh1ep"]
 [ext_resource type="Texture2D" uid="uid://3q6un1st6se0" path="res://test_erin/assets_minigame/Sugar Idle.PNG" id="3_aq88g"]
+[ext_resource type="Texture2D" uid="uid://2n7ylbwrcgba" path="res://UI Menus/AssetsUIMenus/Mad.PNG" id="3_ifp48"]
+[ext_resource type="Texture2D" uid="uid://368yomph2lxv" path="res://UI Menus/AssetsUIMenus/Happy.PNG" id="4_6cv0w"]
 [ext_resource type="Texture2D" uid="uid://bqkv2ityo14v4" path="res://test_erin/assets_minigame/Cookie Idle.PNG" id="4_aq88g"]
-
-[sub_resource type="Gradient" id="Gradient_j2v3o"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.85098, 0.466667, 0.490196, 0.431373)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_eh1ep"]
-gradient = SubResource("Gradient_j2v3o")
-
-[sub_resource type="Gradient" id="Gradient_aq88g"]
-offsets = PackedFloat32Array(0, 0.640845)
-colors = PackedColorArray(0.6437, 0.402269, 0.490357, 1, 0.303114, 0.605526, 0.887477, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_v0l34"]
-gradient = SubResource("Gradient_aq88g")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xx3qn"]
-albedo_color = Color(0.587118, 0.481098, 0.179221, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_j2v3o"]
-material = SubResource("StandardMaterial3D_xx3qn")
-
-[sub_resource type="Gradient" id="Gradient_xx3qn"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.657741, 0.484914, 0.439116, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2v3o"]
-gradient = SubResource("Gradient_xx3qn")
+[ext_resource type="Texture2D" uid="uid://babcknhyuj8kb" path="res://test_erin/assets_minigame/Sugar pose 1.PNG" id="4_svg0v"]
+[ext_resource type="Texture2D" uid="uid://dbr50my08fjyo" path="res://test_erin/assets_minigame/Sugar Pose 2.PNG" id="5_ifp48"]
+[ext_resource type="Texture2D" uid="uid://c6kfjrdh18g3f" path="res://test_erin/assets_minigame/Button 1.PNG" id="5_v5cgn"]
+[ext_resource type="Texture2D" uid="uid://71hix2s0j5o5" path="res://test_erin/assets_minigame/Sugar pose 3.PNG" id="6_6cv0w"]
+[ext_resource type="Texture2D" uid="uid://d4vypgn2t3dj" path="res://test_erin/assets_minigame/Button 2.PNG" id="6_37rgi"]
+[ext_resource type="Texture2D" uid="uid://dlevg78fg7ohf" path="res://test_erin/assets_minigame/Button 3.PNG" id="7_pvxk3"]
+[ext_resource type="Texture2D" uid="uid://1iggcj7h16mf" path="res://test_erin/assets_minigame/Cookie pose 1.PNG" id="8_u7qa1"]
+[ext_resource type="Texture2D" uid="uid://dpg6xhoccv8e6" path="res://test_erin/assets_minigame/Cookie Pose 2.PNG" id="9_2ba7m"]
+[ext_resource type="Texture2D" uid="uid://c7uh3ukrg76fn" path="res://test_erin/assets_minigame/Cookie pose 3.PNG" id="10_rb2mm"]
+[ext_resource type="Texture2D" uid="uid://ck10oinwaaj17" path="res://test_erin/assets_minigame/Rectangle-01.png" id="11_u6340"]
+[ext_resource type="Texture2D" uid="uid://ccvne7lpn0na8" path="res://test_erin/assets_minigame/timer bar-01.png" id="12_0k8yb"]
 
 [node name="PoseMeter" type="Control"]
 layout_mode = 3
@@ -48,73 +34,235 @@ script = ExtResource("1_xx3qn")
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.989
-anchor_bottom = 0.956
-offset_left = 6.0
-offset_top = 33.0
-offset_right = 5.87
-offset_bottom = 27.008
+anchor_right = 1.0
+anchor_bottom = 0.999
+offset_left = 9.0
+offset_top = 31.0
+offset_right = 2.0
+offset_bottom = -0.318054
 texture = ExtResource("2_eh1ep")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="failed" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.826
+anchor_top = 0.047
+anchor_right = 1.01
+anchor_bottom = 0.337
+offset_left = 0.579956
+offset_top = -0.0540009
+offset_right = 0.300049
+offset_bottom = 0.165985
+texture = ExtResource("3_ifp48")
+expand_mode = 1
+
+[node name="happy" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.826
+anchor_top = 0.047
+anchor_right = 1.01
+anchor_bottom = 0.337
+offset_left = 0.579956
+offset_top = -0.0540009
+offset_right = 0.300049
+offset_bottom = 0.165985
+texture = ExtResource("4_6cv0w")
+expand_mode = 1
+
+[node name="cookieSugar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.241
+anchor_right = 0.888
+anchor_bottom = 0.891
+offset_left = -0.0100098
+offset_top = -22.362
+offset_right = -0.960083
+offset_bottom = 0.337952
+rotation = -0.00193042
+texture = ExtResource("3_aq88g")
+expand_mode = 1
+
+[node name="cookieSugar1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("4_svg0v")
+expand_mode = 1
+
+[node name="cookieSugar2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("5_ifp48")
+expand_mode = 1
+
+[node name="cookieSugar3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("6_6cv0w")
+expand_mode = 1
+
+[node name="cookie" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = -67.61
+offset_top = 65.93
+offset_right = -68.56
+offset_bottom = 67.442
+rotation = -0.00193042
+texture = ExtResource("4_aq88g")
+expand_mode = 1
+
+[node name="cookie1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("8_u7qa1")
+expand_mode = 1
+
+[node name="cookie2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("9_2ba7m")
+expand_mode = 1
+
+[node name="cookie3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.135
+anchor_right = 0.768
+anchor_bottom = 0.819
+offset_left = 0.389999
+offset_top = -0.0700073
+offset_right = -0.559998
+offset_bottom = 1.44196
+rotation = -0.00193042
+texture = ExtResource("10_rb2mm")
 expand_mode = 1
 
 [node name="PoseMeterr" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.324
-anchor_top = 0.4
-anchor_right = 0.655
-anchor_bottom = 0.5
+anchor_top = 0.736
+anchor_right = 0.65
+anchor_bottom = 0.835
 offset_left = -0.0799866
-offset_top = 0.199982
-offset_right = -0.410095
-offset_bottom = -0.634003
+offset_top = -9.952
+offset_right = 9.5
+offset_bottom = 40.53
 value = 100.0
 nine_patch_stretch = true
-texture_over = SubResource("GradientTexture1D_eh1ep")
-texture_progress = SubResource("GradientTexture1D_v0l34")
-tint_progress = Color(1, 0.631373, 1, 1)
+texture_under = ExtResource("11_u6340")
+texture_progress = ExtResource("12_0k8yb")
+tint_progress = Color(1, 0.917832, 0.997123, 1)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
-[node name="won" type="MeshInstance2D" parent="."]
-visible = false
-position = Vector2(603.042, 156.079)
-rotation = 3.14159
-scale = Vector2(352.091, -86.357)
-mesh = SubResource("CylinderMesh_j2v3o")
-texture = SubResource("GradientTexture2D_j2v3o")
-
-[node name="cookieSugar" type="TextureRect" parent="."]
+[node name="1Button" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133
-anchor_top = 0.135
-anchor_right = 0.768
-anchor_bottom = 0.819
-offset_left = 0.389999
-offset_top = -0.0700073
-offset_right = -0.559998
-offset_bottom = 1.44196
-rotation = -0.00193042
-texture = ExtResource("3_aq88g")
+anchor_left = 0.121
+anchor_top = 0.849
+anchor_right = 0.187
+anchor_bottom = 0.962
+offset_left = -141.57
+offset_top = -313.018
+offset_right = 384.21
+offset_bottom = 19.916
+texture = ExtResource("5_v5cgn")
 expand_mode = 1
 
-[node name="cookieSugar2" type="TextureRect" parent="."]
+[node name="2Button" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133
-anchor_top = 0.135
-anchor_right = 0.768
-anchor_bottom = 0.819
-offset_left = 0.389999
-offset_top = -0.0700073
-offset_right = -0.559998
-offset_bottom = 1.44196
-rotation = -0.00193042
-texture = ExtResource("4_aq88g")
+anchor_left = 0.232
+anchor_top = 0.849
+anchor_right = 0.296
+anchor_bottom = 0.962
+offset_left = -271.44
+offset_top = -313.018
+offset_right = 256.68
+offset_bottom = 19.916
+texture = ExtResource("6_37rgi")
 expand_mode = 1
 
-[connection signal="value_changed" from="PoseMeterr" to="." method="_on_pose_meterr_value_changed"]
+[node name="3Button" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341
+anchor_top = 0.847
+anchor_right = 0.399
+anchor_bottom = 0.962
+offset_left = -398.97
+offset_top = -311.654
+offset_right = 136.17
+offset_bottom = 19.916
+texture = ExtResource("7_pvxk3")
+expand_mode = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="value_changed" from="PoseMeterr" to="." method="_on_pose_meterr_value_changed"]
