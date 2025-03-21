@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgl3upst5xeyr"]
+
+[ext_resource type="Texture2D" uid="uid://du6l58k2rineo" path="res://particles/dust.png" id="1_ht672"]
+
+[sub_resource type="Curve" id="Curve_cvs4x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.986667, 0.0337079), -2.52809, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ht672"]
+curve = SubResource("Curve_cvs4x")
+
+[sub_resource type="Gradient" id="Gradient_nb7q0"]
+offsets = PackedFloat32Array(0, 0.331658)
+colors = PackedColorArray(0.898039, 0.94902, 0.937255, 0.345098, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aft68"]
+gradient = SubResource("Gradient_nb7q0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cvs4x"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 596.605, 1)
+angle_min = -164.3
+angle_max = 82.1
+gravity = Vector3(20, 20, 0)
+radial_accel_min = -19.01
+radial_accel_max = 13.69
+scale_min = 0.01
+scale_max = 0.02
+color = Color(0.849883, 0.922378, 0.911635, 1)
+color_initial_ramp = SubResource("GradientTexture1D_aft68")
+alpha_curve = SubResource("CurveTexture_ht672")
+
+[node name="SnowParticles" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(566, 251)
+texture = ExtResource("1_ht672")
+process_material = SubResource("ParticleProcessMaterial_cvs4x")
