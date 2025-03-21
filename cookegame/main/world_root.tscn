@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=33 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
@@ -27,16 +27,21 @@
 [ext_resource type="PackedScene" uid="uid://bph734pbgivdw" path="res://cookieAssets/Road2.glb" id="24_s8m22"]
 [ext_resource type="PackedScene" uid="uid://cr0abr1h51e7m" path="res://test_erin/Scenes/BirdAI.tscn" id="26_8tgsg"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_podmx"]
-size = Vector3(1, 3.07605, 1)
+[sub_resource type="NavigationMesh" id="NavigationMesh_8tgsg"]
+vertices = PackedVector3Array(120.062, 0.366084, 0.142936, 155.562, 0.366084, 0.142936, 120.062, 0.366084, -0.107064, -5.93779, 0.366084, -0.107064, -109.188, 0.366084, -0.107064, -5.93779, 0.366084, 0.142936, 119.812, 0.116084, 0.892936, -5.68779, 0.116084, -0.857064, -5.68779, 0.116084, 0.892936, 119.812, 0.116084, -0.857064)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(2, 0, 6), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 8), PackedInt32Array(8, 7, 9), PackedInt32Array(8, 9, 2), PackedInt32Array(8, 2, 6)]
+agent_max_climb = 84.46
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy6bm"]
 albedo_texture = ExtResource("1_co5ns")
 
 [sub_resource type="BoxMesh" id="BoxMesh_b63mn"]
 material = SubResource("StandardMaterial3D_hy6bm")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gagtc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_podmx"]
+size = Vector3(1, 3.07605, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_attvt"]
 
@@ -273,19 +278,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6514, -1.04839, -0.849674)
 visible = false
 texture = ExtResource("10_8tff1")
 
-[node name="ground" type="StaticBody3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_8tgsg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
-shape = SubResource("WorldBoundaryShape3D_gagtc")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1162, 1.03802, 0)
-shape = SubResource("BoxShape3D_podmx")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(265.873, 0, 0, 0, 1, 0, 0, 0, 1, 23.2487, -0.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_b63mn")
+skeleton = NodePath("../..")
+
+[node name="ground" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ground"]
+shape = SubResource("WorldBoundaryShape3D_gagtc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1162, 1.03802, 0)
+shape = SubResource("BoxShape3D_podmx")
+
+[node name="Road2" parent="NavigationRegion3D" instance=ExtResource("24_s8m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4561, -0.525749, 0.0433981)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
@@ -347,10 +359,15 @@ transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08,
 mesh = SubResource("CylinderMesh_attvt")
 skeleton = NodePath("../../chocZone")
 
-[node name="Road2" parent="." instance=ExtResource("24_s8m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4561, -0.525749, 0.0433981)
-
-[node name="Bird" parent="." instance=ExtResource("26_8tgsg")]
+[node name="Bird" parent="." node_paths=PackedStringArray("Waypoints", "WaypointsCage") instance=ExtResource("26_8tgsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54914, 0.431681, 0)
+Waypoints = [NodePath("../Marker3D"), NodePath("../Marker3D2")]
+WaypointsCage = [NodePath("../Marker3D")]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21456, 1.71758, 0.481354)
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75178, 0.537012, 0.481354)
 
 [connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]
