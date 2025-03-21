@@ -367,6 +367,9 @@ transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 1.73469, 0.454207, -
 [node name="SugarCookie" parent="TransitionsHolder/sugZone" instance=ExtResource("22_60jlr")]
 transform = Transform3D(0.207484, 0, 0, 0, 0.207484, 0, 0, 0, 0.207484, 0.263157, 0.396686, -0.387521)
 
+[node name="awaitVoicelineTimer" type="Timer" parent="TransitionsHolder/sugZone"]
+one_shot = true
+
 [node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, -0.246715)
 
@@ -379,6 +382,9 @@ transform = Transform3D(0.22771, 0, 0, 0, 0.22771, 0, 0, 0, 0.22771, 1.37122, 0.
 [node name="ChocolateChip" parent="TransitionsHolder/chocZone" instance=ExtResource("31_2ttty")]
 transform = Transform3D(0.176467, 0, 0, 0, 0.176467, 0, 0, 0, 0.176467, 0.546913, 0.160456, 0.128217)
 
+[node name="awaitVoicelineTimer" type="Timer" parent="TransitionsHolder/chocZone"]
+one_shot = true
+
 [node name="nnnZone" parent="TransitionsHolder" groups=["nnn"] instance=ExtResource("3_hy6bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, -0.297749)
 
@@ -388,7 +394,7 @@ transform = Transform3D(0.221624, 0, 0, 0, 0.221624, 0, 0, 0, 0.221624, -0.17057
 [node name="N&NCookie(2)" parent="TransitionsHolder/nnnZone" instance=ExtResource("33_g7c3a")]
 transform = Transform3D(0.225108, 0, 0, 0, 0.225108, 0, 0, 0, 0.225108, 1.11845, 0.272075, 0)
 
-[node name="awaitVoicelineTimer" type="Timer" parent="TransitionsHolder"]
+[node name="awaitVoicelineTimer" type="Timer" parent="TransitionsHolder/nnnZone"]
 one_shot = true
 
 [node name="Bird" parent="." instance=ExtResource("26_8tgsg")]
@@ -446,4 +452,6 @@ stream = ExtResource("32_26806")
 volume_db = 7.0
 
 [connection signal="timeout" from="camPositions/transTime" to="camPositions" method="timeout"]
-[connection signal="timeout" from="TransitionsHolder/awaitVoicelineTimer" to="TransitionsHolder/sugZone" method="_on_await_voiceline_timer_timeout"]
+[connection signal="timeout" from="TransitionsHolder/sugZone/awaitVoicelineTimer" to="TransitionsHolder/sugZone" method="_on_await_voiceline_timer_timeout"]
+[connection signal="timeout" from="TransitionsHolder/chocZone/awaitVoicelineTimer" to="TransitionsHolder/chocZone" method="_on_await_voiceline_timer_timeout"]
+[connection signal="timeout" from="TransitionsHolder/nnnZone/awaitVoicelineTimer" to="TransitionsHolder/nnnZone" method="_on_await_voiceline_timer_timeout"]
