@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bl4k747ypgqn7"]
+[gd_scene load_steps=24 format=3 uid="uid://bl4k747ypgqn7"]
 
 [ext_resource type="Script" uid="uid://cgohs11vx0gbc" path="res://minigames/nnquiz_minigame/quiz_script.gd" id="1_8dqqd"]
 [ext_resource type="Texture2D" uid="uid://mkomiuy26iik" path="res://minigames/nnquiz_minigame/assets/Question One-01.png" id="3_mdw22"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkq2b7ygwwka" path="res://main/assets/CoDonalds.PNG" id="20_rc8tt"]
 [ext_resource type="Texture2D" uid="uid://cdpfstrl50si4" path="res://main/assets/Home 1.PNG" id="21_4xhto"]
 [ext_resource type="Texture2D" uid="uid://bq2ob6mwoieg8" path="res://main/assets/Vending.PNG" id="22_4xhto"]
+[ext_resource type="AudioStream" uid="uid://cocf52gbs2fj8" path="res://Sounds/game.mp3" id="23_cvovo"]
 
 [node name="QuizScene" type="Node3D"]
 
@@ -745,6 +746,10 @@ texture = ExtResource("21_4xhto")
 [node name="vending2" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.5289, 2.70937, -0.336177)
 texture = ExtResource("22_4xhto")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_cvovo")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/question01/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/question01/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]

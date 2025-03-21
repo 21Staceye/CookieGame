@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://btpf6b1mcie8v"]
 
-[ext_resource type="PackedScene" uid="uid://d4llpn58pc8dy" path="res://cookieAssets/RaisinCookie.glb" id="2_otx88"]
+[ext_resource type="PackedScene" uid="uid://qmaeshyyq33t" path="res://cookieAssets/RaisinCookieNew.glb" id="2_rhbkt"]
 [ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
@@ -23,8 +23,8 @@ script = ExtResource("2_y2sa1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.615, 0, 0, 0)
 shape = SubResource("SphereShape3D_y2sa1")
 
-[node name="RaisinCookie" parent="weightPlayer" instance=ExtResource("2_otx88")]
-transform = Transform3D(0.287072, 0, 0, 0, 0.287072, 0, 0, 0, 0.287072, 0.504243, -0.146613, 0.0104485)
+[node name="RaisinCookieNew" parent="weightPlayer" instance=ExtResource("2_rhbkt")]
+transform = Transform3D(0.303513, 0, 0, 0, 0.303513, 0, 0, 0, 0.303513, 0.507792, 0, 0)
 
 [node name="tempBack" type="Sprite3D" parent="."]
 transform = Transform3D(1.16759, 0, 0, 0, 1.16759, 0, 0, 0, 1, 0, 0.859422, -2.05726)

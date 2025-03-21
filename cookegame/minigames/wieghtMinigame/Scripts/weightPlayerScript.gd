@@ -19,6 +19,8 @@ func release_mouse():	#Use whenever to let the pl0ayer have their mouse back
 func _ready():
 	capture_mouse()		#Get mouse
 	get_parent().get_node("ChocolateChip(2)/AnimationPlayer").play("ChocolateChip(2)_Idle")
+	get_node("RaisinCookieNew/Raisin_Cookie/Skeleton3D/N&N_Paint").visible = false
+	get_node("RaisinCookieNew/AnimationPlayer").play("Raisin_Idle")
 
 func _process(delta):
 	#print(score)
