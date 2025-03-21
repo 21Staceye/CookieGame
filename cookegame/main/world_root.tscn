@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://b4m0bbkbgr5co"]
 
-[ext_resource type="Script" uid="uid://dmou31b77mf7v" path="res://main/world_root.gd" id="1_2s24k"]
+[ext_resource type="Script" path="res://main/world_root.gd" id="1_2s24k"]
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
 [ext_resource type="PackedScene" uid="uid://b60wevh7r0fpc" path="res://main/cookie.tscn" id="1_b63mn"]
 [ext_resource type="Texture2D" uid="uid://c7o7xor52kp6b" path="res://minigames/nnquiz_minigame/assets/IMG_0653.jpg" id="1_co5ns"]
@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 [ext_resource type="PackedScene" uid="uid://dqhvld317qlb" path="res://cookieAssets/SugarCookie2.glb" id="23_s8m22"]
 [ext_resource type="PackedScene" uid="uid://bsb1sc6x24n5t" path="res://cookieAssets/Road2.glb" id="24_s8m22"]
-[ext_resource type="PackedScene" uid="uid://cr0abr1h51e7m" path="res://test_erin/Scenes/BirdAI.tscn" id="26_8tgsg"]
+[ext_resource type="PackedScene" path="res://test_erin/Scenes/BirdAI.tscn" id="26_8tgsg"]
 [ext_resource type="AudioStream" uid="uid://b5cw3s118ceo3" path="res://VoiceLines/desmond/SugarCookieIntroDesmond.wav" id="27_1srm6"]
 [ext_resource type="AudioStream" uid="uid://btsgsdpgk05jq" path="res://VoiceLines/desmond/OpeningDesmond.wav" id="27_ygacu"]
 [ext_resource type="PackedScene" uid="uid://cn4hmhw4e20v8" path="res://cookieAssets/ChocolateChip(2).glb" id="28_26806"]

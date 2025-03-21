@@ -15,18 +15,18 @@ grow_vertical = 2
 [node name="dialogue1" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 78.0
+offset_top = 44.0
 offset_right = 3299.0
-offset_bottom = 2628.0
+offset_bottom = 2594.0
 scale = Vector2(0.350406, 0.350406)
 texture = ExtResource("1_qw2jc")
 
 [node name="dialogue2" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 78.0
+offset_top = 44.0
 offset_right = 3299.0
-offset_bottom = 2628.0
+offset_bottom = 2594.0
 scale = Vector2(0.350406, 0.350406)
 texture = ExtResource("2_jq8t7")
 
