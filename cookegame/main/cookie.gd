@@ -19,7 +19,11 @@ func _physics_process(delta: float) -> void:
 
 		if angular_velocity.z > 10:
 			angular_velocity.z = 10
-			
+	if (self.global_position.z!=0.0):
+		self.global_position.z == 0.0
+	if(self.global_rotation_degrees.x!=0.0 or self.global_rotation_degrees.y!=0.0):
+		self.global_rotation_degrees.x = 0.0
+		self.global_rotation_degrees.y = 0.0
 	else:
 		self.position = freezePos
 		angular_velocity.z = 0
