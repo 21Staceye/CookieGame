@@ -10,6 +10,8 @@ extends CharacterBody3D
 @export var isOverlapped = false
 @export var score = 25
 
+
+
 func capture_mouse():	#Use this whenever to grab the mouse - used on ready
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -18,6 +20,7 @@ func release_mouse():	#Use whenever to let the pl0ayer have their mouse back
 	
 func _ready():
 	capture_mouse()		#Get mouse
+	get_parent().get_node("ChocolateChip(2)/AnimationPlayer").play("ChocolateChip(2)_Idle")
 
 func _process(delta):
 	#print(score)
@@ -42,4 +45,6 @@ func _process(delta):
 			
 			
 	if (score >= 100):
-		print("YOU DID IT!!!")
+		get_tree().change_scene_to_file("res://comics/Scenes/comic3Scene.tscn")
+	if (score <= 0):
+		get_tree().change_scene_to_file("res://main/world_root.tscn")

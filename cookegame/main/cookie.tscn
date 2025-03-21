@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b60wevh7r0fpc"]
 
 [ext_resource type="Script" uid="uid://dfkjprq6837t0" path="res://main/cookie.gd" id="1_wx4hi"]
-[ext_resource type="PackedScene" uid="uid://dkv314bcudc77" path="res://cookieAssets/RaisinCookie.glb" id="2_0yr3t"]
+[ext_resource type="PackedScene" uid="uid://d4llpn58pc8dy" path="res://cookieAssets/RaisinCookie.glb" id="2_0yr3t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yr3t"]
 friction = 5.0

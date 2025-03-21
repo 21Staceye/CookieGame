@@ -1,37 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://btpf6b1mcie8v"]
+[gd_scene load_steps=12 format=3 uid="uid://btpf6b1mcie8v"]
 
+[ext_resource type="PackedScene" uid="uid://d4llpn58pc8dy" path="res://cookieAssets/RaisinCookie.glb" id="2_otx88"]
 [ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
-[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="4_ib16f"]
+[ext_resource type="PackedScene" path="res://main/HealthBar.tscn" id="4_ib16f"]
+[ext_resource type="PackedScene" uid="uid://cn4hmhw4e20v8" path="res://cookieAssets/ChocolateChip(2).glb" id="6_qy4hl"]
+[ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="7_rhbkt"]
+[ext_resource type="Texture2D" uid="uid://da80dg6v1jg5" path="res://main/assets/Home 3.PNG" id="7_ymb44"]
+[ext_resource type="Texture2D" uid="uid://73thx76wvloa" path="res://main/assets/Donut.PNG" id="8_ucski"]
+[ext_resource type="PackedScene" uid="uid://bsb1sc6x24n5t" path="res://cookieAssets/Road2.glb" id="9_ucski"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y2sa1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc8ge"]
-albedo_color = Color(0.844349, 0.617202, 0.323976, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_nc8ge"]
-material = SubResource("StandardMaterial3D_nc8ge")
 
 [node name="WeightGame" type="Node3D"]
 
 [node name="weightPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38357, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53636, 0.0850198, 0)
 script = ExtResource("2_y2sa1")
 
 [node name="playCol" type="CollisionShape3D" parent="weightPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.615, 0, 0, 0)
 shape = SubResource("SphereShape3D_y2sa1")
 
-[node name="tempMesh" type="MeshInstance3D" parent="weightPlayer/playCol"]
-mesh = SubResource("SphereMesh_nc8ge")
+[node name="RaisinCookie" parent="weightPlayer" instance=ExtResource("2_otx88")]
+transform = Transform3D(0.287072, 0, 0, 0, 0.287072, 0, 0, 0, 0.287072, 0.504243, -0.146613, 0.0104485)
 
 [node name="tempBack" type="Sprite3D" parent="."]
 transform = Transform3D(1.16759, 0, 0, 0, 1.16759, 0, 0, 0, 1, 0, 0.859422, -2.05726)
+visible = false
 texture = ExtResource("2_x4tpg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932857, 2.03389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833248, 2.32652)
 
 [node name="WeightUI" parent="." instance=ExtResource("3_x4tpg")]
 
@@ -43,5 +44,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62344, 1.98376)
 [node name="healthTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="ChocolateChip(2)" parent="." instance=ExtResource("6_qy4hl")]
+transform = Transform3D(0.328587, 0, 0, 0, 0.328587, 0, 0, 0, 0.328587, 1.29167, 0.0666969, -0.165466)
+
+[node name="background" type="Sprite3D" parent="."]
+transform = Transform3D(1.64294, 0, 0, 0, 1.64294, 0, 0, 0, 1.64294, 10.1071, 0.956961, -27.2708)
+texture = ExtResource("7_rhbkt")
+
+[node name="HouseP" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.15976, 2.15697, -0.800926)
+texture = ExtResource("7_ymb44")
+
+[node name="donut2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.13615, 2.15697, -0.800926)
+texture = ExtResource("8_ucski")
+
+[node name="Road2" parent="." instance=ExtResource("9_ucski")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37582, -1.13829, -0.326008)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
+light_color = Color(1, 0.853715, 0.63686, 1)
+light_energy = 1.941
 
 [connection signal="timeout" from="healthTimer" to="weightPlayer" method="_on_health_timer_timeout"]

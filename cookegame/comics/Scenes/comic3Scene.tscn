@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dtsn884tnfptw" path="res://comics/Assets/Comic3/Comic 3 Panel 3.PNG" id="5_xuxso"]
 [ext_resource type="Texture2D" uid="uid://di6knhqhjrnpf" path="res://comics/Assets/Comic3/Comic 3 Panel 4.PNG" id="6_hg7o5"]
 [ext_resource type="Texture2D" uid="uid://dtoldgrlntcs" path="res://comics/Assets/Comic3/Comic 3 Panel 5.PNG" id="7_h05v7"]
-[ext_resource type="AudioStream" uid="uid://blkbs3vopmu7w" path="res://VoiceLines/desmond/NNOutroDesmond.wav" id="8_xuxso"]
+[ext_resource type="AudioStream" uid="uid://ci2tk4jtidlu2" path="res://VoiceLines/desmond/ChocolateChipOutroDesmond.wav" id="8_xuxso"]
 
 [node name="comicRoot" type="Node2D"]
 script = ExtResource("1_h05v7")
