@@ -14,7 +14,4 @@ transform = Transform3D(1, 0, 0, 0, 0.0426604, 0.99909, 0, -0.99909, 0.0426604, 
 
 [node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]
 
-[node name="Timer" parent="PoseMeter" index="1"]
-one_shot = false
-
 [editable path="PoseMeter"]

@@ -11,7 +11,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if (isTalking != true):
 		$Camera3D.position = Vector3(self.position.x, self.position.y+0.842, self.position.z+2.318)
-		
+	
 		if Input.is_action_pressed("Forward"):
 			angular_velocity.z -= rolling_force*delta
 		elif Input.is_action_pressed("Back"):
@@ -19,11 +19,13 @@ func _physics_process(delta: float) -> void:
 
 		if angular_velocity.z > 10:
 			angular_velocity.z = 10
+	else:
+		self.position = freezePos
+		angular_velocity.z = 0
+		
 	if (self.global_position.z!=0.0):
 		self.global_position.z == 0.0
 	if(self.global_rotation_degrees.x!=0.0 or self.global_rotation_degrees.y!=0.0):
 		self.global_rotation_degrees.x = 0.0
 		self.global_rotation_degrees.y = 0.0
-	else:
-		self.position = freezePos
-		angular_velocity.z = 0
+	

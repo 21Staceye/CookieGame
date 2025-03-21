@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpdlrkngfg5bw"]
+[gd_scene load_steps=9 format=3 uid="uid://cpdlrkngfg5bw"]
 
 [ext_resource type="Script" uid="uid://blqaymu1aenoc" path="res://comics/Scenes/comic5Script.gd" id="1_unep0"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_qb4q2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://betpilq03p0u1" path="res://comics/Assets/Comic5/Comic 5 Panel 3.PNG" id="5_qb4q2"]
 [ext_resource type="Texture2D" uid="uid://jagyp18is61p" path="res://comics/Assets/Comic5/Comic 5 panel 4.PNG" id="6_723hl"]
 [ext_resource type="Texture2D" uid="uid://de4j0huof1o5k" path="res://comics/Assets/Comic5/Comic 5 Pqnel 5.PNG" id="7_xxj88"]
+[ext_resource type="AudioStream" uid="uid://blkbs3vopmu7w" path="res://VoiceLines/desmond/NNOutroDesmond.wav" id="8_fpc7h"]
 
 [node name="comicRoot" type="Node2D"]
 script = ExtResource("1_unep0")
@@ -54,4 +55,10 @@ position = Vector2(574.713, 328.649)
 scale = Vector2(0.345204, 0.345204)
 texture = ExtResource("7_xxj88")
 
+[node name="voiceLine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fpc7h")
+volume_db = 7.0
+autoplay = true
+
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]
+[connection signal="finished" from="voiceLine" to="." method="_on_voice_line_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cytpbodeft3gc"]
+[gd_scene load_steps=9 format=3 uid="uid://cytpbodeft3gc"]
 
 [ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_h05v7"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_xuxso"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dtsn884tnfptw" path="res://comics/Assets/Comic3/Comic 3 Panel 3.PNG" id="5_xuxso"]
 [ext_resource type="Texture2D" uid="uid://di6knhqhjrnpf" path="res://comics/Assets/Comic3/Comic 3 Panel 4.PNG" id="6_hg7o5"]
 [ext_resource type="Texture2D" uid="uid://dtoldgrlntcs" path="res://comics/Assets/Comic3/Comic 3 Panel 5.PNG" id="7_h05v7"]
+[ext_resource type="AudioStream" uid="uid://blkbs3vopmu7w" path="res://VoiceLines/desmond/NNOutroDesmond.wav" id="8_xuxso"]
 
 [node name="comicRoot" type="Node2D"]
 script = ExtResource("1_h05v7")
@@ -53,5 +54,9 @@ self_modulate = Color(1, 1, 1, 0)
 position = Vector2(574.713, 328.649)
 scale = Vector2(0.345204, 0.345204)
 texture = ExtResource("7_h05v7")
+
+[node name="voiceLine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xuxso")
+volume_db = 7.0
 
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5h0cn3fshflf"]
+[gd_scene load_steps=9 format=3 uid="uid://c5h0cn3fshflf"]
 
 [ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_6lon2"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="1_foc5i"]
 [ext_resource type="Texture2D" uid="uid://dd6jbv5lx5gtq" path="res://comics/Assets/Comic1/Comic 1 Panel 1.PNG" id="2_6lon2"]
+[ext_resource type="AudioStream" uid="uid://btsgsdpgk05jq" path="res://VoiceLines/desmond/OpeningDesmond.wav" id="2_nbuoq"]
 [ext_resource type="Texture2D" uid="uid://bsohhjudwsvls" path="res://comics/Assets/Comic1/Comic 1 Panel 2.PNG" id="3_nbuoq"]
 [ext_resource type="Texture2D" uid="uid://b41cvk5rqpw1c" path="res://comics/Assets/Comic1/Comic 1 Panel 3.PNG" id="4_202bo"]
 [ext_resource type="Texture2D" uid="uid://cghqq8ot7dlyo" path="res://comics/Assets/Comic1/Comic 1 Panel 4.PNG" id="5_wgfot"]
@@ -52,4 +53,9 @@ position = Vector2(574.806, 344.204)
 scale = Vector2(0.345204, 0.345204)
 texture = ExtResource("6_3mwg6")
 
+[node name="voiceLine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nbuoq")
+volume_db = 7.0
+
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]
+[connection signal="finished" from="voiceLine" to="." method="_on_voice_line_finished"]
