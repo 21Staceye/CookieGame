@@ -45,8 +45,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
+wait_time = 7.0
 autostart = true
 
 [node name="failed" type="TextureRect" parent="."]
