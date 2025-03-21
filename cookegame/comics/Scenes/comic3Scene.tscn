@@ -60,3 +60,4 @@ stream = ExtResource("8_xuxso")
 volume_db = 7.0
 
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]
+[connection signal="finished" from="voiceLine" to="." method="_on_voice_line_finished"]

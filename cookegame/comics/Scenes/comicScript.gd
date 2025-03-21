@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	panelList[counter].self_modulate.a += 0.5 * delta
-	if (Input.is_action_just_pressed("Interact") && counter == num + 1 && voiceDone):
+	if (Input.is_action_just_pressed("Interact")  && voiceDone):
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
 
 func changePanel() -> void:
