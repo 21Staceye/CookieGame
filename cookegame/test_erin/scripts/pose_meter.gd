@@ -4,18 +4,15 @@ var value = 0
 var stop = false
 var failed = false
 var passed = false
-var valueSize = 0.5
-var max = 1.2
 var poseNum = 0
 var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
 func _process(delta):
-	if failed == true and poseNum < 2: # failed game 
+	if failed == true or passed == true:
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
-	elif passed == true: # passed the game and moves to the world 
+	elif poseNum == 3 and failed == true:
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
 	else:
-		$happy.visible = false
 		# for the temp poses 
 		if goal == "BalancePos":
 			$cookieSugar2.visible = false
@@ -47,9 +44,10 @@ func _process(delta):
 			$cookie2.visible = false
 			$cookie.visible = false
 			$cookie3.visible = true
-		if Input.is_action_just_pressed(goal) and poseNum < 3 and stop == false:
+		if Input.is_action_just_pressed(goal) and poseNum <= 3:
 				$happy.visible = true
-				
+				await get_tree().create_timer(1.0).timeout
+				$happy.visible = false
 				poseNum+=1
 				stop = false
 				value = 0
@@ -70,11 +68,10 @@ func _process(delta):
 		if stop == false:
 			# pose metter 
 			$PoseMeterr.value = value
-			value+=0.3
+			value+=0.1
 	if value == 99:
 		stop = true
 		failed = true
-		
 		
 		
 
