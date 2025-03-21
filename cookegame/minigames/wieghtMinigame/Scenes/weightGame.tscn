@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://btpf6b1mcie8v"]
+[gd_scene load_steps=13 format=3 uid="uid://btpf6b1mcie8v"]
 
 [ext_resource type="PackedScene" uid="uid://qmaeshyyq33t" path="res://cookieAssets/RaisinCookieNew.glb" id="2_rhbkt"]
 [ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
-[ext_resource type="PackedScene" path="res://main/HealthBar.tscn" id="4_ib16f"]
+[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="4_ib16f"]
 [ext_resource type="PackedScene" uid="uid://cn4hmhw4e20v8" path="res://cookieAssets/ChocolateChip(2).glb" id="6_qy4hl"]
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="7_rhbkt"]
 [ext_resource type="Texture2D" uid="uid://da80dg6v1jg5" path="res://main/assets/Home 3.PNG" id="7_ymb44"]
 [ext_resource type="Texture2D" uid="uid://73thx76wvloa" path="res://main/assets/Donut.PNG" id="8_ucski"]
 [ext_resource type="PackedScene" uid="uid://bsb1sc6x24n5t" path="res://cookieAssets/Road2.glb" id="9_ucski"]
+[ext_resource type="AudioStream" uid="uid://cp4namab8lbo4" path="res://Sounds/workouts.mp3" id="11_gkjcu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y2sa1"]
 
@@ -67,5 +68,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37582, -1.13829, -0.326008
 transform = Transform3D(1, 0, 0, 0, 0.633826, 0.773475, 0, -0.773475, 0.633826, 0, 7.39068, 9.56712)
 light_color = Color(1, 0.853715, 0.63686, 1)
 light_energy = 1.941
+
+[node name="background2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_gkjcu")
+volume_db = -7.619
+autoplay = true
 
 [connection signal="timeout" from="healthTimer" to="weightPlayer" method="_on_health_timer_timeout"]
