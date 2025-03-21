@@ -11,7 +11,7 @@ var whichGroup = -1 #0 for sugar, 1 for nnn, 2 for chocolate
 @onready var UIList = worldScene.get_node("transUI").get_children()
 @onready var camList = worldScene.get_node("camPositions").get_children()
 @onready var introVoiceLines = [worldScene.get_node("VoiceLines/SugarIntro"),worldScene.get_node("VoiceLines/CCIntro"),worldScene.get_node("VoiceLines/NNNIntro")]
-@onready var voicelineTimer = self.get_node("../awaitVoicelineTimer")
+@onready var voicelineTimer = $awaitVoicelineTimer
 
 
 var scenesList = ["res://test_erin/Scenes/sugarCookieMini.tscn", 
@@ -59,8 +59,8 @@ func _process(delta) -> void:
 		print(dialogueCounter)
 
 func doDialogue():
-	camMover.transition_camera(player.get_node("Camera3D"), camList[Globals.completes], 2) #Does tweening
-	dialogues = UIList[Globals.completes].get_children() #Gets the corresponding text box list
+	camMover.transition_camera(player.get_node("Camera3D"), camList[whichGroup], 2) #Does tweening
+	dialogues = UIList[whichGroup].get_children() #Gets the corresponding text box list
 	dialogueCounter = len(dialogues) - 1	#And its length
 
 
