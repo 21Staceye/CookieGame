@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl4k747ypgqn7"]
+[gd_scene load_steps=23 format=3 uid="uid://bl4k747ypgqn7"]
 
 [ext_resource type="Script" uid="uid://cgohs11vx0gbc" path="res://minigames/nnquiz_minigame/quiz_script.gd" id="1_8dqqd"]
 [ext_resource type="Texture2D" uid="uid://mkomiuy26iik" path="res://minigames/nnquiz_minigame/assets/Question One-01.png" id="3_mdw22"]
@@ -13,15 +13,26 @@
 [ext_resource type="Texture2D" uid="uid://cxnesn3pifgn6" path="res://minigames/nnquiz_minigame/assets/Question Nine-01.png" id="11_wlwkf"]
 [ext_resource type="Texture2D" uid="uid://cek8qyf8j2ex1" path="res://minigames/nnquiz_minigame/assets/Question Ten-01.png" id="12_kstsc"]
 [ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="13_2u3ue"]
+[ext_resource type="PackedScene" uid="uid://dtym5e6vv63wh" path="res://cookieAssets/N&NCookie.glb" id="14_hqan4"]
+[ext_resource type="PackedScene" uid="uid://dkv314bcudc77" path="res://cookieAssets/RaisinCookie.glb" id="15_jgj6d"]
+[ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="16_bph6y"]
+[ext_resource type="Texture2D" uid="uid://cq4aegf7b0f4r" path="res://main/assets/Lamppost 1.PNG" id="17_vket2"]
+[ext_resource type="Texture2D" uid="uid://dwcp2f15rnuf" path="res://main/assets/Lamppost2.PNG" id="18_rc8tt"]
+[ext_resource type="PackedScene" uid="uid://bsb1sc6x24n5t" path="res://cookieAssets/Road2.glb" id="19_4xhto"]
+[ext_resource type="Texture2D" uid="uid://bjkq2b7ygwwka" path="res://main/assets/CoDonalds.PNG" id="20_rc8tt"]
+[ext_resource type="Texture2D" uid="uid://cdpfstrl50si4" path="res://main/assets/Home 1.PNG" id="21_4xhto"]
+[ext_resource type="Texture2D" uid="uid://bq2ob6mwoieg8" path="res://main/assets/Vending.PNG" id="22_4xhto"]
 
-[node name="QuizScene" type="CanvasLayer"]
+[node name="QuizScene" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_8dqqd")
 
-[node name="confetti_particles" parent="." instance=ExtResource("4_dg0gv")]
+[node name="confetti_particles" parent="CanvasLayer" instance=ExtResource("4_dg0gv")]
 position = Vector2(326, 202)
 rotation = 1.79324
 
-[node name="question01" type="TextureRect" parent="."]
+[node name="question01" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -35,7 +46,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question01"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question01"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -48,7 +59,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question01"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question01"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -61,7 +72,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question01"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question01"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -74,7 +85,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question01"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question01"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -87,7 +98,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question02" type="TextureRect" parent="."]
+[node name="question02" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -101,7 +112,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question02"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question02"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -114,7 +125,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question02"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question02"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -127,7 +138,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question02"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question02"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -140,7 +151,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question02"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question02"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -153,7 +164,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question03" type="TextureRect" parent="."]
+[node name="question03" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -167,7 +178,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question03"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question03"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -180,7 +191,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question03"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question03"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -193,7 +204,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question03"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question03"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -206,7 +217,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question03"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question03"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -219,7 +230,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question04" type="TextureRect" parent="."]
+[node name="question04" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -233,7 +244,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question04"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question04"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -246,7 +257,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question04"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question04"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -259,7 +270,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question04"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question04"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -272,7 +283,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question04"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question04"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -285,7 +296,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question05" type="TextureRect" parent="."]
+[node name="question05" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -299,7 +310,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question05"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question05"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -312,7 +323,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question05"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question05"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -325,7 +336,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question05"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question05"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -338,7 +349,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question05"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question05"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -351,7 +362,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question06" type="TextureRect" parent="."]
+[node name="question06" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -365,7 +376,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question06"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question06"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -378,7 +389,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question06"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question06"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -391,7 +402,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question06"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question06"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -404,7 +415,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question06"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question06"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -417,7 +428,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question07" type="TextureRect" parent="."]
+[node name="question07" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -431,7 +442,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question07"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question07"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -444,7 +455,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question07"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question07"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -457,7 +468,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question07"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question07"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -470,7 +481,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question07"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question07"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -483,7 +494,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question08" type="TextureRect" parent="."]
+[node name="question08" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -497,7 +508,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question08"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question08"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -510,7 +521,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question08"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question08"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -523,7 +534,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question08"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question08"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -536,7 +547,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question08"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question08"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -549,7 +560,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question09" type="TextureRect" parent="."]
+[node name="question09" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -563,7 +574,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question09"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question09"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -576,7 +587,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question09"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question09"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -589,7 +600,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question09"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question09"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -602,7 +613,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question09"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question09"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -615,7 +626,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="question10" type="TextureRect" parent="."]
+[node name="question10" type="TextureRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.0104167
@@ -629,7 +640,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="goodButton" type="Button" parent="question10"]
+[node name="goodButton" type="Button" parent="CanvasLayer/question10"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -642,7 +653,7 @@ offset_bottom = 1140.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton" type="Button" parent="question10"]
+[node name="evilButton" type="Button" parent="CanvasLayer/question10"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -655,7 +666,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton2" type="Button" parent="question10"]
+[node name="evilButton2" type="Button" parent="CanvasLayer/question10"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -668,7 +679,7 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="evilButton3" type="Button" parent="question10"]
+[node name="evilButton3" type="Button" parent="CanvasLayer/question10"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -681,45 +692,97 @@ offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
 
-[node name="HealthBar" parent="." instance=ExtResource("13_2u3ue")]
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("13_2u3ue")]
 
-[connection signal="pressed" from="question01/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question01/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question01/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question01/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question02/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question02/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question02/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question02/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question03/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question03/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question03/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question03/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question04/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question04/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question04/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question04/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question05/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question05/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question05/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question05/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question06/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question06/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question06/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question06/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question07/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question07/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question07/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question07/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question08/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question08/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question08/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question08/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question09/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question09/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question09/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question09/evilButton3" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question10/goodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="question10/evilButton" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question10/evilButton2" to="." method="_on_evil_button_pressed"]
-[connection signal="pressed" from="question10/evilButton3" to="." method="_on_evil_button_pressed"]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.990948, 0, 0.134246, 0, 1, 0, -0.134246, 0, 0.990948, 1.91113, 1.66793, 4.69328)
+fov = 56.5761
+
+[node name="N&NCookie" parent="." instance=ExtResource("14_hqan4")]
+transform = Transform3D(0.208967, 0, -0.0738228, 0, 0.221624, 0, 0.0738228, 0, 0.208967, 2.22754, 0.514349, -0.00882769)
+
+[node name="N&NCookie2" parent="." instance=ExtResource("14_hqan4")]
+transform = Transform3D(0.208508, 0.0108997, 0.074316, -0.010267, 0.221356, -0.00365936, -0.0744061, 0, 0.20876, 0.942269, 0.514349, 0.00964117)
+
+[node name="RaisinCookie" parent="." instance=ExtResource("15_jgj6d")]
+transform = Transform3D(-0.200513, 0, -0.0944014, 0, 0.221624, 0, 0.0944014, 0, -0.200513, 3.07202, 0.329497, 1.04126)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.761131, -0.480887, 0.435232, 0, 0.671035, 0.741426, -0.648598, -0.564322, 0.510746, 0.911591, 6.35462, 8.46403)
+light_energy = 0.635
+
+[node name="background" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.3632, 2.70937, -82.4904)
+texture = ExtResource("16_bph6y")
+
+[node name="lampPink6" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.900438, 2.734, -0.427444)
+texture = ExtResource("17_vket2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lampPink6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="lampGreen6" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.09956, 2.734, -0.399)
+texture = ExtResource("18_rc8tt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lampGreen6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400324, 0, 0.306655)
+light_color = Color(0.961893, 0.671439, 0, 1)
+
+[node name="Road2" parent="." instance=ExtResource("19_4xhto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4561, -0.525749, 0.0433981)
+
+[node name="Donalds" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.69237, 2.70937, -0.786075)
+texture = ExtResource("20_rc8tt")
+
+[node name="HouseG" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.67116, 2.70937, -0.740616)
+texture = ExtResource("21_4xhto")
+
+[node name="vending2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.5289, 2.70937, -0.336177)
+texture = ExtResource("22_4xhto")
+
+[connection signal="pressed" from="CanvasLayer/question01/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question01/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question01/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question01/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question02/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question02/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question02/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question02/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question03/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question03/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question03/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question03/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question04/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question04/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question04/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question04/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question05/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question05/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question05/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question05/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question06/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question06/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question06/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question06/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question07/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question07/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question07/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question07/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question08/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question08/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question08/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question08/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question09/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question09/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question09/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question09/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question10/goodButton" to="CanvasLayer" method="_on_good_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question10/evilButton" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question10/evilButton2" to="CanvasLayer" method="_on_evil_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/question10/evilButton3" to="CanvasLayer" method="_on_evil_button_pressed"]
