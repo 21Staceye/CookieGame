@@ -25,6 +25,7 @@ func cookieInteract(body: Node3D) -> void:
 	if body.name == "cookie":
 		canTalk = true
 		
+		
 func cookieLeft(body: Node3D) -> void:
 	if body.name == "cookie":
 		canTalk = false
