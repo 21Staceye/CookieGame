@@ -11,6 +11,7 @@ script = ExtResource("2_f42xj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.990543, 0, 0, 0, 1, 0, 0, 0, -0.0593039, 0, 0, 0)
 shape = SubResource("BoxShape3D_f42xj")
+disabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
 transform = Transform3D(0.0472727, 0, 0, 0, 0.048947, 0, 0, 0, 65.8512, 0, 0, 0)
@@ -19,7 +20,8 @@ texture = ExtResource("1_qkr5b")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 3.0
 one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
