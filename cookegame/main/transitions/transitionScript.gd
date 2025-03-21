@@ -1,5 +1,5 @@
 extends Node3D
-@onready var worldScene = get_tree().root.get_child(0)
+@onready var worldScene = get_tree().root.get_child(1)
 @onready var player = worldScene.get_node("cookie")
 @onready var camMover = worldScene.get_node("camPositions")
 @onready var camMain = camMover.get_node("transCam")
@@ -13,6 +13,7 @@ var whichGroup = -1 #0 for sugar, 1 for nnn, 2 for chocolate
 @onready var introVoiceLines = [worldScene.get_node("VoiceLines/SugarIntro"),worldScene.get_node("VoiceLines/CCIntro"),worldScene.get_node("VoiceLines/NNNIntro")]
 @onready var outroVoiceLines = [worldScene.get_node("VoiceLines/SugarOutro"),worldScene.get_node("VoiceLines/NNNOutro"),worldScene.get_node("VoiceLines/CCOutro")]
 @onready var voicelineTimer = self.get_node("../awaitVoicelineTimer")
+
 
 var scenesList = ["res://test_erin/Scenes/sugarCookieMini.tscn", 
 					"res://minigames//nnquiz_minigame/quiz_scene.tscn",
@@ -52,6 +53,7 @@ func _process(delta) -> void:
 		
 	if (Input.is_action_just_pressed("Interact") && canTalk == true):
 		if (dialogueCounter == 0):
+			Globals.cookiePosition = player.position
 			get_tree().change_scene_to_file(scenesList[whichGroup])	#After going thru all the transitions, change to minigame
 		dialogues[dialogueCounter].visible = false #Each time u interact go to the next box
 		dialogueCounter -= 1				#by hiding the one on top of it
