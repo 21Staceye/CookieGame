@@ -36,8 +36,9 @@ func _process(delta):
 			
 	match isOverlapped:
 		false:
-			score -= 4 * delta
-			Globals.cookieHealth -= delta
+			if (score > 0):
+				score -= 4 * delta
+				Globals.cookieHealth -= delta
 			
 		true:
 			score += 4 * delta
