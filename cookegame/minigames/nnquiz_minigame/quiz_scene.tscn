@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cek8qyf8j2ex1" path="res://minigames/nnquiz_minigame/assets/Question Ten-01.png" id="12_kstsc"]
 [ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="13_2u3ue"]
 [ext_resource type="PackedScene" uid="uid://dtym5e6vv63wh" path="res://cookieAssets/N&NCookie.glb" id="14_hqan4"]
-[ext_resource type="PackedScene" uid="uid://dkv314bcudc77" path="res://cookieAssets/RaisinCookie.glb" id="15_jgj6d"]
+[ext_resource type="PackedScene" uid="uid://d4llpn58pc8dy" path="res://cookieAssets/RaisinCookie.glb" id="15_jgj6d"]
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="16_bph6y"]
 [ext_resource type="Texture2D" uid="uid://cq4aegf7b0f4r" path="res://main/assets/Lamppost 1.PNG" id="17_vket2"]
 [ext_resource type="Texture2D" uid="uid://dwcp2f15rnuf" path="res://main/assets/Lamppost2.PNG" id="18_rc8tt"]
