@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0mp4of1gxtyg"]
+[gd_scene load_steps=13 format=3 uid="uid://b0mp4of1gxtyg"]
 
 [ext_resource type="Script" uid="uid://dvb3jjm51ikjr" path="res://minigames/wieghtMinigame/Scripts/wieghUIScript.gd" id="1_jolnj"]
 [ext_resource type="Texture2D" uid="uid://c8vidwb3aqypt" path="res://minigames/wieghtMinigame/Assets/Weight Bar.PNG" id="2_jsau8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drf1ae3pc070a" path="res://minigames/wieghtMinigame/Assets/Mad.PNG" id="5_hgacw"]
 [ext_resource type="Texture2D" uid="uid://cr8qq11t2u742" path="res://minigames/wieghtMinigame/Assets/Bar.PNG" id="6_hgacw"]
 [ext_resource type="Texture2D" uid="uid://ll665vamwn5f" path="res://minigames/wieghtMinigame/Assets/Jelly.PNG" id="7_65ouq"]
+[ext_resource type="PackedScene" uid="uid://38omdjbch0ng" path="res://particles/sweatParticles.tscn" id="8_mmq62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jolnj"]
 size = Vector2(46, 3)
@@ -110,6 +111,10 @@ scale = Vector2(0.188984, 0.223768)
 fill_mode = 3
 texture_under = ExtResource("6_hgacw")
 texture_progress = ExtResource("7_65ouq")
+
+[node name="confetti_particles" parent="." instance=ExtResource("8_mmq62")]
+position = Vector2(343, 325)
+scale = Vector2(0.315988, 0.315988)
 
 [connection signal="area_entered" from="meterArea" to="." method="inBounds"]
 [connection signal="area_exited" from="meterArea" to="." method="outOfBounds"]
