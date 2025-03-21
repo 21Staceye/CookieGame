@@ -32,6 +32,6 @@ func _on_evil_button_pressed() -> void:
 	
 func empy():
 	curQuestion.visible = false
-	self.queue_free()
+	get_tree().change_scene_to_file("res://comics/Scenes/comic3Scene.tscn")
 	#confetti
 	

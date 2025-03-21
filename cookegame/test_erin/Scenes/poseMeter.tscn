@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccrkr1loubx6f"]
+[gd_scene load_steps=19 format=3 uid="uid://ccrkr1loubx6f"]
 
 [ext_resource type="Script" uid="uid://k8mpu6iya2ny" path="res://test_erin/scripts/pose_meter.gd" id="1_xx3qn"]
 [ext_resource type="Texture2D" uid="uid://ck64vwwwmy3w0" path="res://test_erin/assets_minigame/Pose game background .PNG" id="2_eh1ep"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c7uh3ukrg76fn" path="res://test_erin/assets_minigame/Cookie pose 3.PNG" id="10_rb2mm"]
 [ext_resource type="Texture2D" uid="uid://ck10oinwaaj17" path="res://test_erin/assets_minigame/Rectangle-01.png" id="11_u6340"]
 [ext_resource type="Texture2D" uid="uid://ccvne7lpn0na8" path="res://test_erin/assets_minigame/timer bar-01.png" id="12_0k8yb"]
+[ext_resource type="AudioStream" uid="uid://dy15wnvshrvrx" path="res://Sounds/clubMusic.mp3" id="18_u7qa1"]
 
 [node name="PoseMeter" type="Control"]
 layout_mode = 3
@@ -262,6 +263,10 @@ offset_right = 136.17
 offset_bottom = 19.916
 texture = ExtResource("7_pvxk3")
 expand_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_u7qa1")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="value_changed" from="PoseMeterr" to="." method="_on_pose_meterr_value_changed"]
