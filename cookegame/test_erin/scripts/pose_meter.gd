@@ -10,16 +10,15 @@ var goal = arraySteps.pick_random()
 
 var my_scene := load("res://main/cookie.tscn") 
 func _process(delta):
+
 	if passed == true:
-		
-	
 		await get_tree().create_timer(1.0).timeout
 		
-		get_tree().change_scene_to_file("res://main/world_root.tscn")
+		get_tree().change_scene_to_file("res://comics/Scenes/comic2Scene.tscn")
 		
 	elif poseNum == 3 and failed == true:
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://main/world_root.tscn")
+		get_tree().change_scene_to_file("res://comics/Scenes/comic2Scene.tscn")
 	else:
 		# for the temp poses 
 		if $Timer.get_time_left() > 0:
