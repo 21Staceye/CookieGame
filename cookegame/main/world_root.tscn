@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 [ext_resource type="PackedScene" uid="uid://bnynwvkojppym" path="res://cookieAssets/SugarCookie2.glb" id="23_s8m22"]
 [ext_resource type="PackedScene" uid="uid://bph734pbgivdw" path="res://cookieAssets/Road2.glb" id="24_s8m22"]
-[ext_resource type="PackedScene" uid="uid://cr0abr1h51e7m" path="res://test_erin/Scenes/BirdAI.tscn" id="26_8tgsg"]
+[ext_resource type="PackedScene" path="res://test_erin/Scenes/BirdAI.tscn" id="26_8tgsg"]
 [ext_resource type="AudioStream" uid="uid://b5cw3s118ceo3" path="res://VoiceLines/desmond/SugarCookieIntroDesmond.wav" id="27_1srm6"]
 [ext_resource type="AudioStream" uid="uid://btsgsdpgk05jq" path="res://VoiceLines/desmond/OpeningDesmond.wav" id="27_ygacu"]
 [ext_resource type="AudioStream" uid="uid://30b47ry85q21" path="res://VoiceLines/desmond/SugarCookieOutroDesmond.wav" id="28_ygacu"]
