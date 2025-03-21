@@ -7,6 +7,7 @@ var passed = false
 var poseNum = 0
 var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
+
 func _process(delta):
 	if failed == true or passed == true:
 		await get_tree().create_timer(1.0).timeout
@@ -16,6 +17,9 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
 	else:
 		# for the temp poses 
+		if $Timer.get_time_left() > 0:
+			var percentangeTime = (1-$Timer.get_time_left()/$Timer.get_wait_time())*100
+			$PoseMeterr.value = percentangeTime
 		if goal == "BalancePos":
 			$cookieSugar2.visible = false
 			$cookieSugar3.visible = false
@@ -54,6 +58,7 @@ func _process(delta):
 				stop = false
 				value = 0
 				$PoseMeterr.value = 0
+				$Timer.start()
 				goal = arraySteps.pick_random()
 					
 	if poseNum >= 3:
@@ -66,12 +71,12 @@ func _process(delta):
 		$PoseMeterr.visible = false
 		passed = true
 	# pose metter 
-	if timerOut == false or stop == false:
-		$PoseMeterr.value = value
-		value+=0.1
+	
+	
 	if value == 99:
 		stop = true
 		failed = true
+	
 		
 		
 
@@ -81,7 +86,8 @@ func _on_timer_timeout():
 	timerOut = true
 	stop = true
 	failed = true
-	$PoseMeterr.value = 0
+	
+	$PoseMeterr.value += $Timer.wait_time
 	$failed.visible = true
 	$cookie1.visible = false
 	$cookie2.visible = false
