@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvlgx5x6ybemp"]
+[gd_scene load_steps=8 format=3 uid="uid://dvlgx5x6ybemp"]
 
 [ext_resource type="Script" uid="uid://dn4en13vsnquq" path="res://UI Menus/Scripts/credits_menu.gd" id="1_ppbma"]
 [ext_resource type="Texture2D" uid="uid://cu76l1ywlwy2u" path="res://UI Menus/AssetsUIMenus/credits-01-01.png" id="2_ayk42"]
+[ext_resource type="Texture2D" uid="uid://c4g6e0mc2i8nx" path="res://UI Menus/AssetsUIMenus/credits-02-01.png" id="3_0o0af"]
 [ext_resource type="Texture2D" uid="uid://de0vvfkmhg8x7" path="res://UI Menus/AssetsUIMenus/Main Menu Unclicked-01.png" id="3_4kwi5"]
 [ext_resource type="Texture2D" uid="uid://q080yveve548" path="res://UI Menus/AssetsUIMenus/Main Menu Clicked-01.png" id="4_oexpy"]
 [ext_resource type="AudioStream" uid="uid://b0kajlye535gc" path="res://test_erin/Scenes/button-305770.mp3" id="5_oexpy"]
@@ -23,6 +24,16 @@ anchor_right = 1.009
 anchor_bottom = 1.0
 offset_right = -0.368042
 texture = ExtResource("2_ayk42")
+expand_mode = 1
+
+[node name="page2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.009
+anchor_bottom = 1.0
+offset_right = -0.368042
+texture = ExtResource("3_0o0af")
 expand_mode = 1
 
 [node name="back" type="TextureButton" parent="."]
@@ -47,4 +58,19 @@ stream = ExtResource("5_oexpy")
 stream = ExtResource("6_73bfd")
 autoplay = true
 
+[node name="next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.815
+anchor_top = 0.082
+anchor_right = 0.942
+anchor_bottom = 0.19
+offset_left = 0.119934
+offset_top = -0.136002
+offset_right = -0.184082
+offset_bottom = -0.12001
+text = "Next
+"
+
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
