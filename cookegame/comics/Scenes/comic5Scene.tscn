@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpdlrkngfg5bw"]
+[gd_scene load_steps=10 format=3 uid="uid://cpdlrkngfg5bw"]
 
 [ext_resource type="Script" uid="uid://blqaymu1aenoc" path="res://comics/Scenes/comic5Script.gd" id="1_unep0"]
+[ext_resource type="PackedScene" uid="uid://rntwg04e6bw3" path="res://comics/Scenes/comic6Scene.tscn" id="2_723hl"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_qb4q2"]
 [ext_resource type="Texture2D" uid="uid://bfrchge7ffx1y" path="res://comics/Assets/Comic5/Comic 5 Panel 1.PNG" id="3_unep0"]
 [ext_resource type="Texture2D" uid="uid://dxfkwns6tcfuo" path="res://comics/Assets/Comic5/Comic 5 Panel 2.PNG" id="4_fpc7h"]
@@ -11,6 +12,7 @@
 
 [node name="comicRoot" type="Node2D"]
 script = ExtResource("1_unep0")
+sceneToChangeTo = ExtResource("2_723hl")
 
 [node name="bckgrnd" type="Sprite2D" parent="."]
 position = Vector2(575, 381)

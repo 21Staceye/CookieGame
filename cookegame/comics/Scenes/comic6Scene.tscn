@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://rntwg04e6bw3"]
+[gd_scene load_steps=6 format=3 uid="uid://rntwg04e6bw3"]
 
-[ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_1inam"]
+[ext_resource type="Script" uid="uid://blqaymu1aenoc" path="res://comics/Scenes/comic5Script.gd" id="1_y1qig"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_huf5o"]
+[ext_resource type="PackedScene" uid="uid://yq8hon3ubt66" path="res://endCutscene/davidScene.tscn" id="2_o4r4c"]
 [ext_resource type="Texture2D" uid="uid://ss7h6yxenuot" path="res://comics/Assets/Comic6/Comic 6 Panel 1.PNG" id="3_y1qig"]
 [ext_resource type="Texture2D" uid="uid://64r7iic00axa" path="res://comics/Assets/Comic6/Comic 6 Panel 2.PNG" id="4_o4r4c"]
 
 [node name="comicRoot" type="Node2D"]
-script = ExtResource("1_1inam")
+script = ExtResource("1_y1qig")
+voiceFinished = true
+sceneToChangeTo = ExtResource("2_o4r4c")
 
 [node name="bckgrnd" type="Sprite2D" parent="."]
 position = Vector2(575, 381)
