@@ -2,7 +2,8 @@ extends Node3D
 @onready var worldScene = get_tree().root.get_child(1)
 @onready var player = worldScene.get_node("cookie")
 @onready var costumes = [player.get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/Headband"),
-							player.get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/N&N_Paint")]
+							player.get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/N&N_Paint"),
+							player.get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/Raisins")]
 @onready var camMover = worldScene.get_node("camPositions")
 @onready var camMain = camMover.get_node("transCam")
 
@@ -44,8 +45,12 @@ func _process(delta) -> void:
 			"nnn":
 				whichGroup = 2
 		if (Globals.completes == whichGroup):	#Makes sure we talk to the groups in order
-			if (whichGroup > 0):
-				costumes[whichGroup - 1].visible = true
+			match whichGroup:
+				1:
+					costumes[whichGroup - 1].visible = true
+				2:
+					costumes[whichGroup - 1].visible = true
+					costumes[2].visible = false
 			isTalk = true
 			player.isTalking = true
 			player.freezePos = player.position
