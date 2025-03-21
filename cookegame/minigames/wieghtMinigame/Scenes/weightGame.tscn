@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://btpf6b1mcie8v"]
+[gd_scene load_steps=8 format=3 uid="uid://btpf6b1mcie8v"]
 
 [ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
+[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="4_ib16f"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y2sa1"]
 
@@ -36,3 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932857, 2.03389)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62344, 1.98376)
+
+[node name="HealthBar" parent="." instance=ExtResource("4_ib16f")]
+
+[node name="healthTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="healthTimer" to="weightPlayer" method="_on_health_timer_timeout"]

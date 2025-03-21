@@ -3,6 +3,7 @@ var done = false
 
 func _ready() -> void:
 	Globals.cookiePosition = Vector3(0,0.5,0)
+	Globals.cookieHealth = 100
 
 func _on_play_button_pressed():
 	$buttonHit.play()

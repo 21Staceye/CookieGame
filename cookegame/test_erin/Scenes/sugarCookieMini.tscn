@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgweijhh32kgv"]
+[gd_scene load_steps=4 format=3 uid="uid://dgweijhh32kgv"]
 
 [ext_resource type="PackedScene" uid="uid://ccrkr1loubx6f" path="res://test_erin/Scenes/poseMeter.tscn" id="1_q2jvn"]
+[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="2_61mhl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q2jvn"]
 
@@ -13,5 +14,60 @@ mesh = SubResource("PlaneMesh_q2jvn")
 transform = Transform3D(1, 0, 0, 0, 0.0426604, 0.99909, 0, -0.99909, 0.0426604, 0, 1.09767, 0)
 
 [node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]
+
+[node name="PoseMeterr" parent="PoseMeter" index="12"]
+offset_top = -72.952
+offset_bottom = -22.47
+
+[node name="1Button" parent="PoseMeter" index="13"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="2Button" parent="PoseMeter" index="14"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="3Button" parent="PoseMeter" index="15"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="HealthBar" parent="." instance=ExtResource("2_61mhl")]
+anchors_preset = -1
+anchor_left = 0.00694444
+anchor_top = 0.441358
+anchor_right = 1.00694
+anchor_bottom = 1.44136
+offset_bottom = 6.10352e-05
+metadata/_edit_use_anchors_ = true
 
 [editable path="PoseMeter"]

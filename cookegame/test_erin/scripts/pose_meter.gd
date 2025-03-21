@@ -92,6 +92,8 @@ func _on_timer_timeout():
 	stop = true
 	failed = true
 	
+	Globals.cookieHealth -= 20
+	
 	$PoseMeterr.value += $Timer.wait_time
 	$failed.visible = true
 	$cookie1.visible = false

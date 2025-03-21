@@ -22,8 +22,7 @@ func _on_good_button_pressed() -> void:
 
 func _on_evil_button_pressed() -> void:
 	incorrectCount += 1
-	if incorrectCount >=3:
-		pass #die
+	Globals.cookieHealth -= 20
 	if len(questionsList) == 0:
 		empy() 
 	else:

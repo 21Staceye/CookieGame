@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ox5504uvf0"]
+
+[ext_resource type="Script" uid="uid://cljdxfkno7f25" path="res://main/health_bar.gd" id="1_5t7oa"]
+[ext_resource type="Texture2D" uid="uid://b4sx6466ilvew" path="res://main/assets/Health background.PNG" id="2_fg83o"]
+[ext_resource type="Texture2D" uid="uid://p1rc0fadf0hg" path="res://main/assets/Health bar.PNG" id="3_3224u"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5t7oa")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+anchor_left = 0.764757
+anchor_top = 0.037037
+anchor_right = 1.13976
+anchor_bottom = 0.537037
+offset_left = -6.10352e-05
+offset_right = 1728.0
+offset_bottom = 1296.0
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("2_fg83o")
+texture_progress = ExtResource("3_3224u")
+metadata/_edit_use_anchors_ = true

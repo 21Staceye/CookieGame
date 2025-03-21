@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bl4k747ypgqn7"]
+[gd_scene load_steps=14 format=3 uid="uid://bl4k747ypgqn7"]
 
 [ext_resource type="Script" uid="uid://cgohs11vx0gbc" path="res://minigames/nnquiz_minigame/quiz_script.gd" id="1_8dqqd"]
 [ext_resource type="Texture2D" uid="uid://mkomiuy26iik" path="res://minigames/nnquiz_minigame/assets/Question One-01.png" id="3_mdw22"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cg3hkragrwvt3" path="res://minigames/nnquiz_minigame/assets/Question Eight-01.png" id="10_0iqjr"]
 [ext_resource type="Texture2D" uid="uid://cxnesn3pifgn6" path="res://minigames/nnquiz_minigame/assets/Question Nine-01.png" id="11_wlwkf"]
 [ext_resource type="Texture2D" uid="uid://cek8qyf8j2ex1" path="res://minigames/nnquiz_minigame/assets/Question Ten-01.png" id="12_kstsc"]
+[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="13_2u3ue"]
 
 [node name="QuizScene" type="CanvasLayer"]
 script = ExtResource("1_8dqqd")
@@ -679,6 +680,8 @@ offset_right = 4446.0
 offset_bottom = 1121.0
 scale = Vector2(0.05, 0.05)
 metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" parent="." instance=ExtResource("13_2u3ue")]
 
 [connection signal="pressed" from="question01/goodButton" to="." method="_on_good_button_pressed"]
 [connection signal="pressed" from="question01/evilButton" to="." method="_on_evil_button_pressed"]
