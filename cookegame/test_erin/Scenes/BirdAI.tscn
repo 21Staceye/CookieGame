@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr0abr1h51e7m"]
+[gd_scene load_steps=4 format=3 uid="uid://cr0abr1h51e7m"]
 
-[ext_resource type="Script" uid="uid://b87wf675krath" path="res://test_erin/Scenes/bird_ai.gd" id="1_f42xj"]
 [ext_resource type="Texture2D" uid="uid://dfyj31s372foq" path="res://test_erin/assets_minigame/Peeps 2.PNG" id="1_qkr5b"]
+[ext_resource type="Script" uid="uid://cjekh11dinr6f" path="res://test_erin/scripts/bird_ai.gd" id="2_f42xj"]
 
-[node name="BirdAi" type="CharacterBody2D"]
-script = ExtResource("1_f42xj")
+[sub_resource type="BoxShape3D" id="BoxShape3D_f42xj"]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("2_f42xj")
 
-[node name="image" type="Sprite2D" parent="."]
-position = Vector2(327.5, 377)
-scale = Vector2(0.0825195, 0.0703125)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.990543, 0, 0, 0, 1, 0, 0, 0, -0.0593039, 0, 0, 0)
+shape = SubResource("BoxShape3D_f42xj")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(0.0472727, 0, 0, 0, 0.048947, 0, 0, 0, 65.8512, 0, 0, 0)
 texture = ExtResource("1_qkr5b")
