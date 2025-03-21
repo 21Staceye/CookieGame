@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://btpf6b1mcie8v"]
 
-[ext_resource type="PackedScene" uid="uid://qmaeshyyq33t" path="res://cookieAssets/RaisinCookieNew.glb" id="2_rhbkt"]
+[ext_resource type="PackedScene" uid="uid://tyc8x5qv4gg5" path="res://cookieAssets/Raisincookiefinal.glb" id="2_gkjcu"]
 [ext_resource type="Texture2D" uid="uid://cpx13rjo1ntcm" path="res://minigames/wieghtMinigame/Assets/tempGym.PNG" id="2_x4tpg"]
 [ext_resource type="Script" uid="uid://c61swoa1wbgrh" path="res://minigames/wieghtMinigame/Scripts/weightPlayerScript.gd" id="2_y2sa1"]
 [ext_resource type="PackedScene" uid="uid://b0mp4of1gxtyg" path="res://minigames/wieghtMinigame/Scenes/weightUI.tscn" id="3_x4tpg"]
-[ext_resource type="PackedScene" uid="uid://c7ox5504uvf0" path="res://main/HealthBar.tscn" id="4_ib16f"]
+[ext_resource type="PackedScene" path="res://main/HealthBar.tscn" id="4_ib16f"]
 [ext_resource type="PackedScene" uid="uid://cn4hmhw4e20v8" path="res://cookieAssets/ChocolateChip(2).glb" id="6_qy4hl"]
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="7_rhbkt"]
 [ext_resource type="Texture2D" uid="uid://da80dg6v1jg5" path="res://main/assets/Home 3.PNG" id="7_ymb44"]
@@ -17,15 +17,15 @@
 [node name="WeightGame" type="Node3D"]
 
 [node name="weightPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53636, 0.0850198, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97481, 0.0850198, 0)
 script = ExtResource("2_y2sa1")
 
 [node name="playCol" type="CollisionShape3D" parent="weightPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.615, 0, 0, 0)
 shape = SubResource("SphereShape3D_y2sa1")
 
-[node name="RaisinCookieNew" parent="weightPlayer" instance=ExtResource("2_rhbkt")]
-transform = Transform3D(0.303513, 0, 0, 0, 0.303513, 0, 0, 0, 0.303513, 0.507792, 0, 0)
+[node name="Raisincookiefinal" parent="weightPlayer" instance=ExtResource("2_gkjcu")]
+transform = Transform3D(0.357923, 0, 0, 0, 0.357923, 0, 0, 0, 0.357923, 0.16652, 0.0424572, 0)
 
 [node name="tempBack" type="Sprite3D" parent="."]
 transform = Transform3D(1.16759, 0, 0, 0, 1.16759, 0, 0, 0, 1, 0, 0.859422, -2.05726)
@@ -33,7 +33,7 @@ visible = false
 texture = ExtResource("2_x4tpg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.833248, 2.32652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395565, 0.833248, 3.14531)
 
 [node name="WeightUI" parent="." instance=ExtResource("3_x4tpg")]
 
@@ -47,7 +47,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="ChocolateChip(2)" parent="." instance=ExtResource("6_qy4hl")]
-transform = Transform3D(0.328587, 0, 0, 0, 0.328587, 0, 0, 0, 0.328587, 1.29167, 0.0666969, -0.165466)
+transform = Transform3D(0.328587, 0, 0, 0, 0.328587, 0, 0, 0, 0.328587, 1.588, 0.085, 0)
 
 [node name="background" type="Sprite3D" parent="."]
 transform = Transform3D(1.64294, 0, 0, 0, 1.64294, 0, 0, 0, 1.64294, 10.1071, 0.956961, -27.2708)
