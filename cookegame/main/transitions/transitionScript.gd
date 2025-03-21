@@ -10,7 +10,7 @@ var whichGroup = -1 #0 for sugar, 1 for nnn, 2 for chocolate
 
 @onready var UIList = worldScene.get_node("transUI").get_children()
 @onready var camList = worldScene.get_node("camPositions").get_children()
-@onready var introVoiceLines = [worldScene.get_node("VoiceLines/SugarIntro"),worldScene.get_node("VoiceLines/NNNIntro"),worldScene.get_node("VoiceLines/CCIntro")]
+@onready var introVoiceLines = [worldScene.get_node("VoiceLines/SugarIntro"),worldScene.get_node("VoiceLines/CCIntro"),worldScene.get_node("VoiceLines/NNNIntro")]
 @onready var outroVoiceLines = [worldScene.get_node("VoiceLines/SugarOutro"),worldScene.get_node("VoiceLines/NNNOutro"),worldScene.get_node("VoiceLines/CCOutro")]
 @onready var voicelineTimer = self.get_node("../awaitVoicelineTimer")
 
@@ -36,11 +36,12 @@ func _process(delta) -> void:
 		match group[0]:
 			"sugar":
 				whichGroup = 0
-			"nnn":
-				whichGroup = 2
 			"chocolate":
 				whichGroup = 1
+			"nnn":
+				whichGroup = 2
 		if (player.completes == whichGroup):	#Makes sure we talk to the groups in order
+			print(whichGroup)
 			isTalk = true
 			player.isTalking = true
 			player.freezePos = player.position
@@ -62,5 +63,6 @@ func doDialogue():
 
 
 func _on_await_voiceline_timer_timeout() -> void:
+	print(whichGroup)
 	UIList[whichGroup].visible = true	#Make corresponding UI visible
 	doDialogue()

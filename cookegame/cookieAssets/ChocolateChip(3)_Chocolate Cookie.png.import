@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blg2q1dukmdqp"
-path.s3tc="res://.godot/imported/RaisinCookie_Raisin Cookie.png-6a76518ad7826586c34ee30d812e79c1.s3tc.ctex"
+uid="uid://chflcr7tblgfc"
+path.s3tc="res://.godot/imported/ChocolateChip(3)_Chocolate Cookie.png-bc2a595f365cc4cbd97cf7500235f996.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d64deb3ddc29111a031b7259b2ec8784"
+"md5": "a0e873e69bbcbd90d2a136c4bcc3e0ca"
 }
 
 [deps]
 
-source_file="res://cookieAssets/RaisinCookie_Raisin Cookie.png"
-dest_files=["res://.godot/imported/RaisinCookie_Raisin Cookie.png-6a76518ad7826586c34ee30d812e79c1.s3tc.ctex"]
+source_file="res://cookieAssets/ChocolateChip(3)_Chocolate Cookie.png"
+dest_files=["res://.godot/imported/ChocolateChip(3)_Chocolate Cookie.png-bc2a595f365cc4cbd97cf7500235f996.s3tc.ctex"]
 
 [params]
 

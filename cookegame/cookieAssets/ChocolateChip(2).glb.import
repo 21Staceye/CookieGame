@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkv314bcudc77"
-path="res://.godot/imported/RaisinCookie.glb-816e76f10f6a7ca90a502f4c4648d1be.scn"
+uid="uid://cn4hmhw4e20v8"
+path="res://.godot/imported/ChocolateChip(2).glb-754043de0b752c6f4c1660a7b1ad4f83.scn"
 
 [deps]
 
-source_file="res://cookieAssets/RaisinCookie.glb"
-dest_files=["res://.godot/imported/RaisinCookie.glb-816e76f10f6a7ca90a502f4c4648d1be.scn"]
+source_file="res://cookieAssets/ChocolateChip(2).glb"
+dest_files=["res://.godot/imported/ChocolateChip(2).glb-754043de0b752c6f4c1660a7b1ad4f83.scn"]
 
 [params]
 
