@@ -6,17 +6,10 @@
 
 [node name="SugarCookieMini" type="Node3D"]
 
-[node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]
-offset_left = 1.0
-offset_top = 1.0
-
-[node name="Timer" parent="PoseMeter" index="1"]
-wait_time = 3.0
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_q2jvn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0426604, 0.99909, 0, -0.99909, 0.0426604, 0, 1.09767, 0)
 
-[editable path="PoseMeter"]
+[node name="PoseMeter" parent="." instance=ExtResource("1_q2jvn")]

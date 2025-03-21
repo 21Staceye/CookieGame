@@ -9,8 +9,10 @@ var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
 func _process(delta):
 	if failed == true or passed == true:
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
 	elif poseNum == 3 and failed == true:
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
 	else:
 		# for the temp poses 
@@ -65,10 +67,8 @@ func _process(delta):
 		passed = true
 	# pose metter 
 	if timerOut == false or stop == false:
-		if stop == false:
-			# pose metter 
-			$PoseMeterr.value = value
-			value+=0.1
+		$PoseMeterr.value = value
+		value+=0.1
 	if value == 99:
 		stop = true
 		failed = true
@@ -76,11 +76,12 @@ func _process(delta):
 		
 
 func _on_timer_timeout():
+	print("timer")
 	#time out for losing the mini game 
 	timerOut = true
 	stop = true
 	failed = true
-	$PoseMeterr.value = 100
+	$PoseMeterr.value = 0
 	$failed.visible = true
 	$cookie1.visible = false
 	$cookie2.visible = false
