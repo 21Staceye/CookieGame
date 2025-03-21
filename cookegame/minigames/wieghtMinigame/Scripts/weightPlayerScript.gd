@@ -10,8 +10,6 @@ extends CharacterBody3D
 @export var isOverlapped = false
 @export var score = 25
 
-
-
 func capture_mouse():	#Use this whenever to grab the mouse - used on ready
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -41,9 +39,7 @@ func _process(delta):
 			
 		true:
 			score += 4 * delta
-			
-			
-			
+
 	if (score >= 100):
 		get_tree().change_scene_to_file("res://comics/Scenes/comic3Scene.tscn")
 	if (score <= 0):
