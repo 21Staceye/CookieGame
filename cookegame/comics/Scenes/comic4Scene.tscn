@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://mexxjddfrlmd"]
+
+[ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_er1un"]
+[ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_iown1"]
+[ext_resource type="Texture2D" uid="uid://b7bnlqcrgu58f" path="res://comics/Assets/Comic4/Comic 4 Panel 1.PNG" id="3_iown1"]
+[ext_resource type="Texture2D" uid="uid://duilaf8yrnmn2" path="res://comics/Assets/Comic4/Comic 4 Panel 2.PNG" id="4_hhc7b"]
+[ext_resource type="Texture2D" uid="uid://bpd5lgwco4nax" path="res://comics/Assets/Comic4/Comic 4 Panel 3.PNG" id="5_hps6h"]
+[ext_resource type="Texture2D" uid="uid://bdkc3ko6k0irg" path="res://comics/Assets/Comic4/Comic 4 Panel 4.PNG" id="6_huod4"]
+[ext_resource type="Texture2D" uid="uid://c37pdocvwt6jh" path="res://comics/Assets/Comic4/Comic 4 Panel 5.PNG" id="7_53yfa"]
+[ext_resource type="Texture2D" uid="uid://w1vupvrgpgm" path="res://comics/Assets/Comic4/Comic 4 Panel 6.PNG" id="8_na058"]
+
+[node name="comicRoot" type="Node2D"]
+script = ExtResource("1_er1un")
+
+[node name="bckgrnd" type="Sprite2D" parent="."]
+position = Vector2(575, 381)
+scale = Vector2(0.3865, 0.3865)
+texture = ExtResource("2_iown1")
+
+[node name="whenToChange" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="panels" type="Node2D" parent="."]
+position = Vector2(18, 3)
+scale = Vector2(0.966493, 0.966493)
+
+[node name="p1" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("3_iown1")
+
+[node name="p2" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("4_hhc7b")
+
+[node name="p3" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("5_hps6h")
+
+[node name="p4" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("6_huod4")
+
+[node name="p5" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("7_53yfa")
+
+[node name="p6" type="Sprite2D" parent="panels"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574.713, 328.649)
+scale = Vector2(0.345204, 0.345204)
+texture = ExtResource("8_na058")
+
+[connection signal="timeout" from="whenToChange" to="." method="changePanel"]
