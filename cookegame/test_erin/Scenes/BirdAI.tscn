@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr0abr1h51e7m"]
+
+[ext_resource type="Script" uid="uid://b87wf675krath" path="res://test_erin/Scenes/bird_ai.gd" id="1_f42xj"]
+[ext_resource type="Texture2D" uid="uid://dfyj31s372foq" path="res://test_erin/assets_minigame/Peeps 2.PNG" id="1_qkr5b"]
+
+[node name="BirdAi" type="CharacterBody2D"]
+script = ExtResource("1_f42xj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="image" type="Sprite2D" parent="."]
+position = Vector2(327.5, 377)
+scale = Vector2(0.0825195, 0.0703125)
+texture = ExtResource("1_qkr5b")

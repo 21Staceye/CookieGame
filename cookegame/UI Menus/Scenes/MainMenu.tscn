@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwg5jw4jjm8mk"]
+[gd_scene load_steps=8 format=3 uid="uid://bwg5jw4jjm8mk"]
 
 [ext_resource type="Script" uid="uid://c63vjda5mtafv" path="res://UI Menus/Scripts/main_menu.gd" id="1_od3hb"]
 [ext_resource type="Texture2D" uid="uid://dwyqobmn0oq5b" path="res://UI Menus/AssetsUIMenus/CookieTitle.png" id="2_od3hb"]
 [ext_resource type="AudioStream" uid="uid://b0kajlye535gc" path="res://test_erin/Scenes/button-305770.mp3" id="3_43qd0"]
 [ext_resource type="AudioStream" uid="uid://c5vcx4jtpw2o6" path="res://Sounds/title_screen_music.mp3" id="4_ccg7x"]
+[ext_resource type="Texture2D" uid="uid://cgu54ju5f8tss" path="res://UI Menus/AssetsUIMenus/quitglow (1).png" id="5_qec3p"]
+[ext_resource type="Texture2D" uid="uid://dgt30lh5vnnr1" path="res://UI Menus/AssetsUIMenus/creditsglow (1).png" id="6_nf5dk"]
+[ext_resource type="Texture2D" uid="uid://dj0tkwgytdmdm" path="res://UI Menus/AssetsUIMenus/playglow (1).png" id="7_0sasd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,61 +22,66 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.003
 anchor_bottom = 1.0
-offset_right = -0.456055
+offset_left = -2.0
+offset_right = 5.54395
+offset_bottom = -3.0
 texture = ExtResource("2_od3hb")
 expand_mode = 1
-
-[node name="PlayButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.266
-anchor_top = 0.34
-anchor_right = 0.657
-anchor_bottom = 0.569
-offset_left = -0.432007
-offset_top = -0.320007
-offset_right = 0.135986
-offset_bottom = 0.287994
-theme_override_font_sizes/font_size = 35
-text = "
-"
-
-[node name="QuitButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.119
-anchor_top = 0.772
-anchor_right = 0.426
-anchor_bottom = 0.924
-offset_left = -0.0879974
-offset_top = -0.256012
-offset_right = 0.247955
-offset_bottom = 0.247986
-theme_override_font_sizes/font_size = 35
-
-[node name="CreditsButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.564
-anchor_top = 0.728
-anchor_right = 0.872
-anchor_bottom = 0.884
-offset_left = 0.271973
-offset_top = 0.255981
-offset_right = -0.544067
-offset_bottom = 0.167969
-theme_override_font_sizes/font_size = 35
-text = "
-"
 
 [node name="buttonHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_43qd0")
 
 [node name="title_screen" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ccg7x")
+volume_db = -6.933
 autoplay = true
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[node name="quitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.101
+anchor_top = 0.676
+anchor_right = 0.445
+anchor_bottom = 0.958
+offset_left = 12.648
+offset_top = 12.9519
+offset_right = 6.35999
+offset_bottom = 0.215942
+rotation = 0.077392
+texture_pressed = ExtResource("5_qec3p")
+texture_hover = ExtResource("5_qec3p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CreditsButton2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.468
+anchor_top = 0.702
+anchor_right = 0.968
+anchor_bottom = 1.015
+offset_left = -19.136
+offset_top = 44.104
+offset_right = -10.1361
+offset_bottom = 13.2799
+rotation = -0.275663
+texture_pressed = ExtResource("6_nf5dk")
+texture_hover = ExtResource("6_nf5dk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="playButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 198.0
+offset_right = 775.0
+offset_bottom = 404.0
+texture_pressed = ExtResource("7_0sasd")
+texture_hover = ExtResource("7_0sasd")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="finished" from="buttonHit" to="." method="_on_button_hit_finished"]
+[connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsButton2" to="." method="_on_credits_button_2_pressed"]
+[connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
