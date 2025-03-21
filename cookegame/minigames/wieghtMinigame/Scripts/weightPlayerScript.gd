@@ -18,6 +18,7 @@ func release_mouse():	#Use whenever to let the pl0ayer have their mouse back
 	
 func _ready():
 	capture_mouse()		#Get mouse
+	get_parent().get_node("ChocolateChip(2)/AnimationPlayer").play("ChocolateChip(2)_Idle")
 
 func _process(delta):
 	#print(score)
@@ -38,8 +39,8 @@ func _process(delta):
 			
 		true:
 			score += 4 * delta
-			
-			
-			
+
 	if (score >= 100):
-		get_tree().change_scene_to_file("res://comics/Scenes/comic4Scene.tscn")
+		get_tree().change_scene_to_file("res://comics/Scenes/comic3Scene.tscn")
+	if (score <= 0):
+		get_tree().change_scene_to_file("res://main/world_root.tscn")

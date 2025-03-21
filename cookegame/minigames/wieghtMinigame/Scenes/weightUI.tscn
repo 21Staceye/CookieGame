@@ -51,11 +51,11 @@ offset_right = 83.0
 offset_bottom = 381.0
 
 [node name="topBound" type="CollisionShape2D" parent="meterArea"]
-position = Vector2(62, 70)
+position = Vector2(62, 104)
 shape = SubResource("RectangleShape2D_jolnj")
 
 [node name="lowBound" type="CollisionShape2D" parent="meterArea"]
-position = Vector2(61, 417)
+position = Vector2(61, 451)
 shape = SubResource("RectangleShape2D_jolnj")
 
 [node name="Sprite2D" type="Sprite2D" parent="meterArea"]
@@ -64,7 +64,7 @@ scale = Vector2(0.25713, 0.25713)
 texture = ExtResource("2_jsau8")
 
 [node name="pusher" type="Area2D" parent="."]
-position = Vector2(74, 372)
+position = Vector2(73, 372)
 scale = Vector2(0.515511, 0.515511)
 
 [node name="pusherCollision" type="CollisionShape2D" parent="pusher"]

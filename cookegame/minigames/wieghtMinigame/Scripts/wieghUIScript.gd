@@ -18,7 +18,6 @@ var speed = 120
 func goalHit(area: Area2D) -> void:
 	if (area.name == "pusher"):
 		player.isOverlapped = true
-		print("who up overlapping")
 		
 		gudSprite.visible = true
 		badSprite.visible = false
@@ -26,7 +25,6 @@ func goalHit(area: Area2D) -> void:
 func goalMiss(area: Area2D) -> void:
 	if (area.name == "pusher"):
 		player.isOverlapped = false
-		print("not you")
 		
 		gudSprite.visible = false
 		badSprite.visible = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://mexxjddfrlmd"]
+[gd_scene load_steps=11 format=3 uid="uid://mexxjddfrlmd"]
 
-[ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_er1un"]
+[ext_resource type="Script" uid="uid://blqaymu1aenoc" path="res://comics/Scenes/comic5Script.gd" id="1_hps6h"]
+[ext_resource type="PackedScene" uid="uid://cpdlrkngfg5bw" path="res://comics/Scenes/comic5Scene.tscn" id="2_huod4"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_iown1"]
 [ext_resource type="Texture2D" uid="uid://b7bnlqcrgu58f" path="res://comics/Assets/Comic4/Comic 4 Panel 1.PNG" id="3_iown1"]
 [ext_resource type="Texture2D" uid="uid://duilaf8yrnmn2" path="res://comics/Assets/Comic4/Comic 4 Panel 2.PNG" id="4_hhc7b"]
@@ -8,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bdkc3ko6k0irg" path="res://comics/Assets/Comic4/Comic 4 Panel 4.PNG" id="6_huod4"]
 [ext_resource type="Texture2D" uid="uid://c37pdocvwt6jh" path="res://comics/Assets/Comic4/Comic 4 Panel 5.PNG" id="7_53yfa"]
 [ext_resource type="Texture2D" uid="uid://w1vupvrgpgm" path="res://comics/Assets/Comic4/Comic 4 Panel 6.PNG" id="8_na058"]
-[ext_resource type="AudioStream" uid="uid://ci2tk4jtidlu2" path="res://VoiceLines/desmond/ChocolateChipOutroDesmond.wav" id="9_hhc7b"]
+[ext_resource type="AudioStream" uid="uid://blkbs3vopmu7w" path="res://VoiceLines/desmond/NNOutroDesmond.wav" id="10_53yfa"]
 
 [node name="comicRoot" type="Node2D"]
-script = ExtResource("1_er1un")
+script = ExtResource("1_hps6h")
+sceneToChangeTo = ExtResource("2_huod4")
 
 [node name="bckgrnd" type="Sprite2D" parent="."]
 position = Vector2(575, 381)
@@ -63,7 +65,7 @@ scale = Vector2(0.345204, 0.345204)
 texture = ExtResource("8_na058")
 
 [node name="voiceLine" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_hhc7b")
+stream = ExtResource("10_53yfa")
 volume_db = 7.0
 
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]
