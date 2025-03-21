@@ -15,7 +15,7 @@ var SPEED = 0.3
 
 #@export var speed = 3
 var move_vec = Vector3(rng.randf_range(-1.0,1.0),0,0)
-var speed = 0.3
+var speed = 0.9
 var waypointIndex : int = 0
 var waypointIndexCage : int = 0
 @export var baseSpeed = 2
@@ -35,10 +35,8 @@ func _process(delta):
 		var velocity = move_vec*speed*delta
 		translate(velocity)
 		move_and_slide()
-	if $Timer.is_stopped() == true:
-		curState = States.waiting
-		speed = 0
-		$Timer.start()
+
+		
 		
 		
 		
@@ -62,5 +60,6 @@ func get_rand_point(radius:float) -> Vector3:
 
 func _on_timer_timeout() -> void:	
 	move_vec = Vector3(rng.randf_range(-1.0,0.3),0,0)
-	speed = 0.3
+	speed = 0.9
+	$Timer.start()
 	curState = States.walking
