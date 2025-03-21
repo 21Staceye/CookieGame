@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d = $NavigationAgent3D
-@onready var MonsterRef
+@onready var MonsterRef = $/root/worldRoot/cookie
 var playerInSight : bool
 var rng = RandomNumberGenerator.new()
 enum States{
 	walking,
-	pickedup,
+	flying,
 	waiting
 }
 #@onready var MonsterRef
@@ -31,11 +31,34 @@ func _ready():
 	
 	
 func _process(delta):
+	var flySpace = 1.2
+	if MonsterRef.global_position.distance_to(global_position) <= flySpace:
+		curState = States.flying
 	if curState == States.walking:
+		if global_position.y > 0.432:
+			global_position.y +=-0.3*speed*delta
+		else:
+			if move_vec.x < 0:
+				$CollisionShape3D/back.visible = true
+				$CollisionShape3D/forward.visible = false
+			if move_vec.x > 0:
+				$CollisionShape3D/back.visible = false
+				$CollisionShape3D/forward.visible = true
+			var velocity = move_vec*speed*delta
+			
+			
+			
+			translate(velocity)
+		
+			move_and_slide()
+	if curState == States.flying:
+		move_vec = Vector3(-0.4,1,0)
 		var velocity = move_vec*speed*delta
 		translate(velocity)
 		move_and_slide()
-
+		
+		
+		
 		
 		
 		

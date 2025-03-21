@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://jk81mjuivkse" path="res://main/assets/Lamppost3.PNG" id="9_podmx"]
 [ext_resource type="Texture2D" uid="uid://csw54nihn0ei4" path="res://main/assets/Home 4.PNG" id="9_qqvfl"]
 [ext_resource type="Texture2D" uid="uid://dhd621abt5qn3" path="res://main/assets/road2.png" id="10_8tff1"]
-[ext_resource type="PackedScene" path="res://main/transitions/transitionsUI/sugarTransUI.tscn" id="20_0qq3w"]
+[ext_resource type="PackedScene" uid="uid://dg4tasjldxvk3" path="res://main/transitions/transitionsUI/sugarTransUI.tscn" id="20_0qq3w"]
 [ext_resource type="Script" uid="uid://dk3nlalmhjkog" path="res://main/cookieAnims.gd" id="21_646bl"]
-[ext_resource type="PackedScene" path="res://main/transitions/transitionsUI/chocoTransUI.tscn" id="21_diutq"]
+[ext_resource type="PackedScene" uid="uid://crauttyeb06jn" path="res://main/transitions/transitionsUI/chocoTransUI.tscn" id="21_diutq"]
 [ext_resource type="PackedScene" uid="uid://bbn42tm6vwgv6" path="res://cookieAssets/SugarCookie.glb" id="22_60jlr"]
-[ext_resource type="PackedScene" path="res://main/transitions/transitionsUI/nnnTransUI.tscn" id="22_26806"]
+[ext_resource type="PackedScene" uid="uid://8rh8n3xon22" path="res://main/transitions/transitionsUI/nnnTransUI.tscn" id="22_26806"]
 [ext_resource type="AudioStream" uid="uid://1hqqhv40x1kb" path="res://Sounds/mainRootBackground.mp3" id="22_qp774"]
 [ext_resource type="PackedScene" uid="uid://dqhvld317qlb" path="res://cookieAssets/SugarCookie2.glb" id="23_s8m22"]
 [ext_resource type="PackedScene" uid="uid://bsb1sc6x24n5t" path="res://cookieAssets/Road2.glb" id="24_s8m22"]
@@ -388,6 +388,21 @@ one_shot = true
 
 [node name="Bird" parent="." instance=ExtResource("26_8tgsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3616, 0.431681, 0.745645)
+
+[node name="Bird2" parent="." instance=ExtResource("26_8tgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0846, 0.431681, 0.745645)
+
+[node name="Bird3" parent="." instance=ExtResource("26_8tgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72321, 0.431681, 0.745645)
+
+[node name="Bird4" parent="." instance=ExtResource("26_8tgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7204, 0.431681, 0.34733)
+
+[node name="Bird5" parent="." instance=ExtResource("26_8tgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7577, 0.431681, 0.745645)
+
+[node name="Bird6" parent="." instance=ExtResource("26_8tgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.3764, 0.431681, 0.745645)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21456, 1.71758, 0.481354)

@@ -13,8 +13,12 @@ transform = Transform3D(0.990543, 0, 0, 0, 1, 0, 0, 0, -0.0593039, 0, 0, 0)
 shape = SubResource("BoxShape3D_f42xj")
 disabled = true
 
-[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
-transform = Transform3D(0.0472727, 0, 0, 0, 0.048947, 0, 0, 0, 65.8512, 0, 0, 0)
+[node name="back" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(0.0224872, 0, 0, 0, 0.019811, 0, 0, 0, 65.8512, 0, 0, 0)
+texture = ExtResource("1_qkr5b")
+
+[node name="forward" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(-0.0224872, 0, -5.75689e-06, 0, 0.019811, 0, 1.96589e-09, 0, -65.8512, 0, 0, 0)
 texture = ExtResource("1_qkr5b")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -24,4 +28,5 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[connection signal="child_entered_tree" from="CollisionShape3D" to="." method="_on_collision_shape_3d_child_entered_tree"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
