@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b4m0bbkbgr5co"]
+[gd_scene load_steps=47 format=3 uid="uid://b4m0bbkbgr5co"]
 
 [ext_resource type="Script" path="res://main/world_root.gd" id="1_2s24k"]
 [ext_resource type="Texture2D" uid="uid://b3sy20rfxeqtn" path="res://main/assets/Background.PNG" id="1_a0p4k"]
@@ -36,8 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://bjqn225hrogs3" path="res://cookieAssets/ChocolateChip(3).glb" id="29_2s24k"]
 [ext_resource type="AudioStream" uid="uid://cewk8vmmbjhxj" path="res://VoiceLines/desmond/NNIntroDesmond.wav" id="29_jkkue"]
 [ext_resource type="AudioStream" uid="uid://blkbs3vopmu7w" path="res://VoiceLines/desmond/NNOutroDesmond.wav" id="30_0qq3w"]
+[ext_resource type="PackedScene" uid="uid://du1snmjdukasc" path="res://cookieAssets/ChocolateChip.glb" id="31_2ttty"]
 [ext_resource type="AudioStream" uid="uid://dxl5n7pbylgje" path="res://VoiceLines/desmond/ChocolateChipIntroDesmond.wav" id="31_diutq"]
+[ext_resource type="PackedScene" uid="uid://dtym5e6vv63wh" path="res://cookieAssets/N&NCookie.glb" id="32_3hje3"]
 [ext_resource type="AudioStream" uid="uid://ci2tk4jtidlu2" path="res://VoiceLines/desmond/ChocolateChipOutroDesmond.wav" id="32_26806"]
+[ext_resource type="PackedScene" uid="uid://cvflv0l0hj6rr" path="res://cookieAssets/N&NCookie(2).glb" id="33_g7c3a"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8tgsg"]
 vertices = PackedVector3Array(120.062, 0.366084, 0.142936, 155.562, 0.366084, 0.142936, 120.062, 0.366084, -0.107064, -5.93779, 0.366084, -0.107064, -109.188, 0.366084, -0.107064, -5.93779, 0.366084, 0.142936, 119.812, 0.116084, 0.892936, -5.68779, 0.116084, -0.857064, -5.68779, 0.116084, 0.892936, 119.812, 0.116084, -0.857064)
@@ -54,8 +57,6 @@ material = SubResource("StandardMaterial3D_hy6bm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_podmx"]
 size = Vector3(1, 3.07605, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_attvt"]
 
 [node name="worldRoot" type="Node3D"]
 script = ExtResource("1_2s24k")
@@ -361,27 +362,31 @@ script = ExtResource("21_646bl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685, -0.083, 0)
 
 [node name="SugarCookie2" parent="TransitionsHolder/sugZone" instance=ExtResource("23_s8m22")]
-transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 1.5219, 0.454207, -0.316078)
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 1.73469, 0.454207, -0.316078)
 
 [node name="SugarCookie" parent="TransitionsHolder/sugZone" instance=ExtResource("22_60jlr")]
 transform = Transform3D(0.207484, 0, 0, 0, 0.207484, 0, 0, 0, 0.207484, 0.263157, 0.396686, -0.387521)
 
 [node name="chocZone" parent="TransitionsHolder" groups=["chocolate"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2237, 0, -0.246715)
 
 [node name="ChocolateChip(2)" parent="TransitionsHolder/chocZone" instance=ExtResource("28_26806")]
 transform = Transform3D(0.229702, 0, 0, 0, 0.229702, 0, 0, 0, 0.229702, -0.291183, 0.323473, -0.202632)
 
 [node name="ChocolateChip(3)" parent="TransitionsHolder/chocZone" instance=ExtResource("29_2s24k")]
-transform = Transform3D(0.22771, 0, 0, 0, 0.22771, 0, 0, 0, 0.22771, 1.37122, 0.340847, -0.202632)
+transform = Transform3D(0.22771, 0, 0, 0, 0.22771, 0, 0, 0, 0.22771, 1.37122, 0.340847, -0.148179)
+
+[node name="ChocolateChip" parent="TransitionsHolder/chocZone" instance=ExtResource("31_2ttty")]
+transform = Transform3D(0.176467, 0, 0, 0, 0.176467, 0, 0, 0, 0.176467, 0.546913, 0.160456, 0.128217)
 
 [node name="nnnZone" parent="TransitionsHolder" groups=["nnn"] instance=ExtResource("3_hy6bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6326, 0, -0.297749)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="TransitionsHolder/nnnZone"]
-transform = Transform3D(1, 0, 0, 0, -8.67034e-09, -1, 0, 0.198354, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_attvt")
-skeleton = NodePath("../../chocZone")
+[node name="N&NCookie" parent="TransitionsHolder/nnnZone" instance=ExtResource("32_3hje3")]
+transform = Transform3D(0.221624, 0, 0, 0, 0.221624, 0, 0, 0, 0.221624, -0.170578, 0.290571, 0)
+
+[node name="N&NCookie(2)" parent="TransitionsHolder/nnnZone" instance=ExtResource("33_g7c3a")]
+transform = Transform3D(0.225108, 0, 0, 0, 0.225108, 0, 0, 0, 0.225108, 1.11845, 0.272075, 0)
 
 [node name="awaitVoicelineTimer" type="Timer" parent="TransitionsHolder"]
 one_shot = true

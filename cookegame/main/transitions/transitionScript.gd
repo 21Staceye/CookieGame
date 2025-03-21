@@ -42,7 +42,7 @@ func _process(delta) -> void:
 				whichGroup = 1
 			"nnn":
 				whichGroup = 2
-		if (player.completes == whichGroup):	#Makes sure we talk to the groups in order
+		if (Globals.completes == whichGroup):	#Makes sure we talk to the groups in order
 			print(whichGroup)
 			isTalk = true
 			player.isTalking = true
