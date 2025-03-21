@@ -15,8 +15,8 @@ var whichGroup = -1 #0 for sugar, 1 for nnn, 2 for chocolate
 
 
 var scenesList = ["res://test_erin/Scenes/sugarCookieMini.tscn", 
-					"res://minigames//nnquiz_minigame/quiz_scene.tscn",
-					"res://minigames/wieghtMinigame/Scenes/weightGame.tscn"]
+					"res://minigames/wieghtMinigame/Scenes/weightGame.tscn",
+					"res://minigames//nnquiz_minigame/quiz_scene.tscn"]
 var dialogues = []	#Modified later to add dialogue text boxes to an array
 var dialogueCounter = 0	 #Modified later to know how many text boxes there are left
 

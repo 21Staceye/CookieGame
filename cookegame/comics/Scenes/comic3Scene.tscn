@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cytpbodeft3gc"]
+[gd_scene load_steps=10 format=3 uid="uid://cytpbodeft3gc"]
 
-[ext_resource type="Script" uid="uid://3i0hvv3oyayv" path="res://comics/Scenes/comicScript.gd" id="1_h05v7"]
+[ext_resource type="Script" uid="uid://blqaymu1aenoc" path="res://comics/Scenes/comic5Script.gd" id="1_xuxso"]
+[ext_resource type="PackedScene" uid="uid://cpdlrkngfg5bw" path="res://comics/Scenes/comic5Scene.tscn" id="2_hg7o5"]
 [ext_resource type="Texture2D" uid="uid://wa4jlepm0eu3" path="res://comics/Assets/Comic blank.PNG" id="2_xuxso"]
 [ext_resource type="Texture2D" uid="uid://c78vul41jhpw1" path="res://comics/Assets/Comic3/Comic 3 Panel 1.PNG" id="3_0pahn"]
 [ext_resource type="Texture2D" uid="uid://o27u182o6d5v" path="res://comics/Assets/Comic3/Comic 3 Panel 2.PNG" id="4_h05v7"]
@@ -10,7 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://ci2tk4jtidlu2" path="res://VoiceLines/desmond/ChocolateChipOutroDesmond.wav" id="8_xuxso"]
 
 [node name="comicRoot" type="Node2D"]
-script = ExtResource("1_h05v7")
+script = ExtResource("1_xuxso")
+sceneToChangeTo = ExtResource("2_hg7o5")
 
 [node name="bckgrnd" type="Sprite2D" parent="."]
 position = Vector2(575, 381)
@@ -58,6 +60,7 @@ texture = ExtResource("7_h05v7")
 [node name="voiceLine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_xuxso")
 volume_db = 7.0
+autoplay = true
 
 [connection signal="timeout" from="whenToChange" to="." method="changePanel"]
 [connection signal="finished" from="voiceLine" to="." method="_on_voice_line_finished"]

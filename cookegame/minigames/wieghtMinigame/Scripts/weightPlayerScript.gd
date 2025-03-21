@@ -43,6 +43,6 @@ func _process(delta):
 			score += 4 * delta
 
 	if (score >= 100):
-		get_tree().change_scene_to_file("res://comics/Scenes/comic3Scene.tscn")
-	if (score <= 0):
-		get_tree().change_scene_to_file("res://main/world_root.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://comics/Scenes/comic4Scene.tscn")
+		Globals.completes +=1
