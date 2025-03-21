@@ -8,10 +8,15 @@ var poseNum = 0
 var arraySteps = ["BalancePos","StandPos", "TipToesPos"]
 var goal = arraySteps.pick_random()
 
+var my_scene := load("res://main/cookie.tscn") 
 func _process(delta):
-	if failed == true or passed == true:
+	if passed == true:
+		
+	
 		await get_tree().create_timer(1.0).timeout
+		
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
+		
 	elif poseNum == 3 and failed == true:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://main/world_root.tscn")
