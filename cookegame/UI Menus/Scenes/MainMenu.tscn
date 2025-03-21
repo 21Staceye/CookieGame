@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgu54ju5f8tss" path="res://UI Menus/AssetsUIMenus/quitglow (1).png" id="5_qec3p"]
 [ext_resource type="Texture2D" uid="uid://dgt30lh5vnnr1" path="res://UI Menus/AssetsUIMenus/creditsglow (1).png" id="6_nf5dk"]
 [ext_resource type="Texture2D" uid="uid://dj0tkwgytdmdm" path="res://UI Menus/AssetsUIMenus/playglow (1).png" id="7_0sasd"]
-[ext_resource type="PackedScene" uid="uid://bgl3upst5xeyr" path="res://particles/snowParticles.tscn" id="8_mnhxx"]
+[ext_resource type="PackedScene" path="res://particles/snowParticles.tscn" id="8_mnhxx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

@@ -70,6 +70,7 @@ one_shot = true
 
 [node name="monologue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qnngv")
+volume_db = 10.0
 autoplay = true
 
 [connection signal="timeout" from="endingTimer" to="." method="ended"]
