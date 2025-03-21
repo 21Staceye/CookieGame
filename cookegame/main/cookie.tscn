@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b60wevh7r0fpc"]
 
 [ext_resource type="Script" uid="uid://dfkjprq6837t0" path="res://main/cookie.gd" id="1_wx4hi"]
-[ext_resource type="PackedScene" uid="uid://d4llpn58pc8dy" path="res://cookieAssets/RaisinCookie.glb" id="2_0yr3t"]
+[ext_resource type="PackedScene" uid="uid://tyc8x5qv4gg5" path="res://cookieAssets/Raisincookiefinal.glb" id="2_0yr3t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0yr3t"]
 friction = 5.0
@@ -23,5 +23,5 @@ shape = SubResource("CylinderShape3D_hyfxj")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842416, 2.31751)
 
-[node name="RaisinCookie" parent="." instance=ExtResource("2_0yr3t")]
+[node name="Raisincookiefinal" parent="." instance=ExtResource("2_0yr3t")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

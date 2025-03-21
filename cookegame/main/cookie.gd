@@ -6,7 +6,11 @@ var rolling_force = 20
 
 func _ready() -> void:
 	$Camera3D.top_level = true
-	get_node("RaisinCookie/AnimationPlayer").play("Raisin_Idle")
+	get_node("Raisincookiefinal/AnimationPlayer").play("Raisin_Idle")
+	get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/Headband").visible = false
+	get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/N&N_Paint").visible = false
+	get_node("Raisincookiefinal/Raisin_Cookie/Skeleton3D/Cube_006").visible = false
+	
  
 func _physics_process(delta: float) -> void:
 	if (isTalking != true):
