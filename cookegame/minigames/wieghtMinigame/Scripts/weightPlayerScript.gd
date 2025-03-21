@@ -42,4 +42,4 @@ func _process(delta):
 			
 			
 	if (score >= 100):
-		print("YOU DID IT!!!")
+		get_tree().change_scene_to_file("res://comics/Scenes/comic4Scene.tscn")
