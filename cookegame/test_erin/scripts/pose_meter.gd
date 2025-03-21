@@ -13,11 +13,12 @@ func _process(delta):
 
 	if passed == true:
 		await get_tree().create_timer(1.0).timeout
-		
+		Globals.completes += 1
 		get_tree().change_scene_to_file("res://comics/Scenes/comic2Scene.tscn")
 		
 	elif poseNum == 3 and failed == true:
 		await get_tree().create_timer(1.0).timeout
+		Globals.completes += 1
 		get_tree().change_scene_to_file("res://comics/Scenes/comic2Scene.tscn")
 	else:
 		# for the temp poses 

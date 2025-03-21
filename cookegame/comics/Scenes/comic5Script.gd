@@ -9,11 +9,11 @@ var counter = 0
 
 func _process(delta: float) -> void:
 	panelList[counter].self_modulate.a += 0.5 * delta
-	if (voiceFinished && counter == num + 1):
+	if (voiceFinished && counter == num + 2):
 		get_tree().change_scene_to_packed(sceneToChangeTo)
 
 func changePanel() -> void:
-	if (counter != num+1):
+	if (counter != num+2):
 		counter += 1
 
 
