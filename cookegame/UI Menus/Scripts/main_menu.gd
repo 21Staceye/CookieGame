@@ -4,7 +4,7 @@ var done = false
 func _on_play_button_pressed():
 	$buttonHit.play()
 	await $buttonHit.finished
-	get_tree().change_scene_to_file("res://main/world_root.tscn")
+	get_tree().change_scene_to_file("res://comics/Scenes/comic1Scene.tscn")
 
 
 func _on_quit_button_pressed() -> void:
